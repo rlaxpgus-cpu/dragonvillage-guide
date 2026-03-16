@@ -1,0 +1,7 @@
+.notice-slide {
+  display:none;
+}
+
+.notice-slide.active {
+  display:block;
+}

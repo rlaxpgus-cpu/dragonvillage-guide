@@ -1,8 +1,33 @@
-[
-  {
-    "title": "공지사항을 준비 중입니다.",
-    "link": "https://community.withhive.com/dvc/ko/board/5",
-    "image": "./images/default-notice.png",
-    "date": "업데이트 대기 중"
-  }
-]
+{
+  "updatedAt": "2026-03-16T18:08:03.585Z",
+  "items": [
+    {
+      "title": "Skip to Main Contents",
+      "link": "https://community.withhive.com/dvc/ko/board/5#CMNTcontent",
+      "date": "",
+      "category": "��������",
+      "image": "images/default-notice.png"
+    },
+    {
+      "title": "English",
+      "link": "https://community.withhive.com/dvc/ko/board/5#",
+      "date": "",
+      "category": "��������",
+      "image": "images/default-notice.png"
+    },
+    {
+      "title": "Skip to Main Contents",
+      "link": "https://community.withhive.com/dvc/ko/board/6#CMNTcontent",
+      "date": "",
+      "category": "������Ʈ",
+      "image": "images/default-notice.png"
+    },
+    {
+      "title": "English",
+      "link": "https://community.withhive.com/dvc/ko/board/6#",
+      "date": "",
+      "category": "������Ʈ",
+      "image": "images/default-notice.png"
+    }
+  ]
+}

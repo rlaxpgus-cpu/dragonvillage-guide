@@ -14,15 +14,15 @@ html {
 
 body {
   font-family: "Malgun Gothic", Arial, sans-serif;
-  background: #ffffff;
-  color: #111111;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
   padding-top: 80px;
 }
 
 img {
-  max-width: 100%;
   display: block;
+  margin: auto;
 }
 
 a {
@@ -66,7 +66,7 @@ ol {
   width: 100%;
   height: 80px;
   background: #ffffff;
-  border-bottom: 2px solid #111111;
+  border-bottom: 2px solid #000000;
   z-index: 9999;
 }
 
@@ -81,7 +81,7 @@ ol {
 
 .site-title {
   position: absolute;
-  left: 20px;
+  left: -460px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.3rem;
@@ -97,22 +97,16 @@ ol {
 /* 중앙 로고 */
 
 .logo {
-  position: absolute;
+  position: center;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
-.logo img {
-  height: 42px;
-  width: auto;
-}
-
 /* 오른쪽 메뉴 */
 
 .nav {
   position: absolute;
-  right: 20px;
+  right: -460px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -186,6 +180,13 @@ ol {
   color: #111111;
   border-color: #f4d000;
 }
+.hero-logo {
+  width: 420px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
 
 /* =========================
    4. 공통 섹션
@@ -209,7 +210,7 @@ ol {
 /* =========================
    5. 카드 레이아웃
 ========================= */
-
+    
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -418,7 +419,7 @@ th {
 
 .notice-slider {
   position: relative;
-  max-width: 1100px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -490,49 +491,38 @@ th {
   background: #ffffff;
   border: 2px solid #111111;
 }
-/* ===== 헤더 강제 정렬 ===== */
 
-.nav-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-}
-
-/* 로고 완전 중앙 */
-.logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* 왼쪽 제목 */
-.site-title {
-  margin-right: auto;
-}
-
-/* 오른쪽 메뉴 */
-.nav {
-  margin-left: auto;
-}
 /* 검은 박스 안 글자 색 강제 적용 */
 .card,
 .info-box,
 .guide-box,
 .tip-box,
-.big-link {
-  color: #ffffff;
+.big-link,
+.side-toc {
+  background: linear-gradient(180deg, var(--black-box) 0%, var(--black-box-2) 100%);
+  color: var(--white);
+  border: 1px solid #2d2d2d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.notice-caption {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.5;
 }
 
-.card h3,
-.info-box h3,
-.guide-box h3,
-.tip-box h3,
-.big-link h3,
-.card p,
-.info-box p,
-.guide-box p,
-.tip-box p,
-.big-link p {
-  color: #ffffff;
+.notice-date {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666666;
+}.notice-caption {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.5;
 }

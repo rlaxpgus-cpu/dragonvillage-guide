@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공지 관리자</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .admin-wrap {
+      max-width: 800px;
+      margin: 120px auto 60px;
+      padding: 0 20px;
+    }
+
+    .admin-box {
+      background: #111111;
+      color: #ffffff;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+
+    .admin-box h2 {
+      margin-bottom: 18px;
+    }
+
+    .admin-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .admin-form input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid #dddddd;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    .admin-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .admin-item {
+      background: #f7f7f7;
+      border: 2px solid #111111;
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .admin-item p {
+      margin-bottom: 8px;
+      color: #111111;
+    }
+
+    .admin-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .btn-delete {
+      background: #ffffff;
+      color: #111111;
+      border: 2px solid #111111;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-delete:hover {
+      background: #f4d000;
+      border-color: #f4d000;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-wrap">
+    <div class="admin-box">
+      <h2>공지 등록</h2>
+
+      <div class="admin-form">
+        <input type="text" id="noticeTitle" placeholder="공지 제목">
+        <input type="text" id="noticeImage" placeholder="이미지 경로 예: images/notice1.jpg">
+        <input type="text" id="noticeLink" placeholder="링크 예: intro.html">
+        <button class="btn" id="saveNotice">공지 저장</button>
+      </div>
+    </div>
+
+    <div class="admin-box">
+      <h2>등록된 공지</h2>
+      <div class="admin-list" id="noticeList"></div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

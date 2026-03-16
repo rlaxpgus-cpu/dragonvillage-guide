@@ -8,7 +8,7 @@
   <title>드래곤 빌리지 컬렉션 초보자 가이드</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
+<script src="script.js"></script>
 <body>
 <header class="header">
   <div class="nav-wrap">
@@ -39,13 +39,13 @@
   <section class="hero">
 
     <div class="hero-banner">
-      <img src="images/main-bg.png" class="hero-background" alt="">
-    </div>
+      <img src="images/main.png" class="hero-background" alt="">
+    </div>  
 
     <div class="hero-content-box">
       <div class="container hero-inner">
 
-        <img src="images/logo.png" class="hero-logo" alt="">
+        <img src="images/main-bg.png" class="hero-logo" alt="">
 
         <h1>
           처음 하는 사람도 쉽게 따라할 수 있는<br>
@@ -63,20 +63,27 @@
       </div>
     </div>
 
-  </section>f
+  </section>
 <section class="notice-section">
   <div class="container">
     <h2>공지사항</h2>
 
-    <div class="notice-slider" id="noticeSlider">
-      <button class="notice-arrow prev" aria-label="이전 공지">‹</button>
-      <div class="notice-track" id="noticeTrack"></div>
-      <button class="notice-arrow next" aria-label="다음 공지">›</button>
+    <div class="notice-slider">
+      <button class="notice-arrow prev" type="button">&#10094;</button>
+
+      <div class="notice-track" id="noticeTrack">
+        <!-- 공지가 자동 생성됨 -->
+      </div>
+
+      <button class="notice-arrow next" type="button">&#10095;</button>
+
       <div class="notice-dots" id="noticeDots"></div>
     </div>
   </div>
 </section>
-<script src="./script.js"></script>
+
+<script src="script.js"></script>
+
   <section class="section" id="intro">
     <div class="container">
 

@@ -1,142 +1,87 @@
-const slider = document.getElementById("noticeSlider");
-const track = document.getElementById("noticeTrack");
-const dotsWrap = document.getElementById("noticeDots");
+const noticeTrack = document.getElementById("noticeTrack");
+const noticeDots = document.getElementById("noticeDots");
+const prevBtn = document.querySelector(".notice-arrow.prev");
+const nextBtn = document.querySelector(".notice-arrow.next");
 
-let slides = [];
-let dots = [];
+let notices = [];
 let currentIndex = 0;
-let autoSlide = null;
 
-function showSlide(index) {
-  if (!slides.length) return;
+function renderNotices() {
+  if (!noticeTrack || !noticeDots) return;
 
-  slides.forEach((slide, i) => {
-    slide.classList.toggle("active", i === index);
-  });
+  noticeTrack.innerHTML = "";
+  noticeDots.innerHTML = "";
 
-  dots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === index);
-  });
-
-  currentIndex = index;
-}
-
-function nextSlide() {
-  if (!slides.length) return;
-  showSlide((currentIndex + 1) % slides.length);
-}
-
-function prevSlide() {
-  if (!slides.length) return;
-  showSlide((currentIndex - 1 + slides.length) % slides.length);
-}
-
-function startAutoSlide() {
-  stopAutoSlide();
-  autoSlide = setInterval(nextSlide, 4000);
-}
-
-function stopAutoSlide() {
-  if (autoSlide) {
-    clearInterval(autoSlide);
-    autoSlide = null;
-  }
-}
-
-function escapeHtml(text) {
-  return String(text ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#39;");
-}
-
-async function loadNotices() {
-  if (!slider || !track || !dotsWrap) return;
-
-  const prevBtn = slider.querySelector(".prev");
-  const nextBtn = slider.querySelector(".next");
-
-  try {
-    const response = await fetch(`./notices.json?v=${Date.now()}`);
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
-    }
-
-    const notices = await response.json();
-
-    if (!Array.isArray(notices) || notices.length === 0) {
-      track.innerHTML = `
-        <div class="notice-empty">
-          아직 불러온 공지사항이 없습니다.
-        </div>
-      `;
-      dotsWrap.innerHTML = "";
-      return;
-    }
-
-    track.innerHTML = notices.map((notice, index) => {
-      const title = escapeHtml(notice.title || "공지사항");
-      const link = notice.link || "#";
-      const image = notice.image || "./images/default-notice.png";
-      const date = escapeHtml(notice.date || "");
-
-      return `
-        <div class="notice-slide ${index === 0 ? "active" : ""}">
-          <a href="${link}" target="_blank" rel="noopener noreferrer">
-            <img src="${image}" alt="${title}">
-            <div class="notice-meta">
-              <p class="notice-title">${title}</p>
-              <p class="notice-date">${date}</p>
-            </div>
-          </a>
-        </div>
-      `;
-    }).join("");
-
-    dotsWrap.innerHTML = notices.map((_, index) => `
-      <button class="dot ${index === 0 ? "active" : ""}" aria-label="${index + 1}번 공지로 이동"></button>
-    `).join("");
-
-    slides = Array.from(track.querySelectorAll(".notice-slide"));
-    dots = Array.from(dotsWrap.querySelectorAll(".dot"));
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        showSlide(index);
-        startAutoSlide();
-      });
-    });
-
-    if (prevBtn) {
-      prevBtn.addEventListener("click", () => {
-        prevSlide();
-        startAutoSlide();
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
-        nextSlide();
-        startAutoSlide();
-      });
-    }
-
-    slider.addEventListener("mouseenter", stopAutoSlide);
-    slider.addEventListener("mouseleave", startAutoSlide);
-
-    showSlide(0);
-    startAutoSlide();
-  } catch (error) {
-    console.error("공지사항 로드 실패:", error);
-    track.innerHTML = `
-      <div class="notice-empty">
-        공지사항을 불러오지 못했습니다.
+  if (!notices.length) {
+    noticeTrack.innerHTML = `
+      <div class="notice-slide active">
+        <a href="https://community.withhive.com/dvc/ko" target="_blank" rel="noopener noreferrer">
+          <img src="images/default-notice.png" alt="기본 공지 이미지">
+        </a>
+        <div class="notice-caption">공지 데이터가 없습니다.</div>
       </div>
     `;
-    dotsWrap.innerHTML = "";
+    return;
+  }
+
+  notices.forEach((notice, index) => {
+    const slide = document.createElement("div");
+    slide.className = `notice-slide ${index === currentIndex ? "active" : ""}`;
+
+    slide.innerHTML = `
+      <a href="${notice.link}" target="_blank" rel="noopener noreferrer">
+        <img src="${notice.image || "images/default-notice.png"}" alt="${notice.title}">
+      </a>
+      <div class="notice-caption">
+        <strong>[${notice.category || "공지"}]</strong> ${notice.title}
+      </div>
+    `;
+
+    const img = slide.querySelector("img");
+    img.onerror = () => {
+      img.src = "images/default-notice.png";
+    };
+
+    noticeTrack.appendChild(slide);
+
+    const dot = document.createElement("button");
+    dot.className = `dot ${index === currentIndex ? "active" : ""}`;
+    dot.type = "button";
+    dot.addEventListener("click", () => {
+      currentIndex = index;
+      renderNotices();
+    });
+
+    noticeDots.appendChild(dot);
+  });
+}
+
+function showPrevNotice() {
+  if (!notices.length) return;
+  currentIndex = (currentIndex - 1 + notices.length) % notices.length;
+  renderNotices();
+}
+
+function showNextNotice() {
+  if (!notices.length) return;
+  currentIndex = (currentIndex + 1) % notices.length;
+  renderNotices();
+}
+
+prevBtn?.addEventListener("click", showPrevNotice);
+nextBtn?.addEventListener("click", showNextNotice);
+
+async function loadNotices() {
+  try {
+    const res = await fetch("./notices.json");
+    const data = await res.json();
+
+    notices = Array.isArray(data.items) ? data.items : [];
+    currentIndex = 0;
+    renderNotices();
+  } catch (error) {
+    console.error("공지 불러오기 실패:", error);
   }
 }
 
-document.addEventListener("DOMContentLoaded", loadNotices);
+loadNotices();
