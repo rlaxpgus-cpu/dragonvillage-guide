@@ -9,7 +9,7 @@ let currentIndex = 0;
 function renderNotices() {
   if (!noticeTrack || !noticeDots) return;
 
-  noticeTrack.innerHTML = "";
+  noticeTrack.innerHTML = ""; 
   noticeDots.innerHTML = "";
 
   if (!notices.length) {
@@ -30,7 +30,7 @@ function renderNotices() {
 
     slide.innerHTML = `
       <a href="${notice.link}" target="_blank" rel="noopener noreferrer">
-        <img src="${notice.image || "images/default-notice.png"}" alt="${notice.title}">
+       <img src="${notice.image || "/images/default-notice.png"}" alt="${notice.title}">
       </a>
       <div class="notice-caption">
         <strong>[${notice.category || "공지"}]</strong> ${notice.title}
@@ -38,9 +38,15 @@ function renderNotices() {
     `;
 
     const img = slide.querySelector("img");
-    img.onerror = () => {
-      img.src = "images/default-notice.png";
-    };
+   img.onerror = function () {
+  if (img.dataset.fallbackApplied === "true") {
+    img.style.display = "none";
+    return;
+  }
+
+  img.dataset.fallbackApplied = "true";
+  img.src = "/images/default-notice.png";
+};
 
     noticeTrack.appendChild(slide);
 
@@ -79,9 +85,32 @@ async function loadNotices() {
     notices = Array.isArray(data.items) ? data.items : [];
     currentIndex = 0;
     renderNotices();
-  } catch (error) {
-    console.error("공지 불러오기 실패:", error);
-  }
+  } 
+ catch (error) {
+  console.error("공지 불러오기 실패:", error);
+  notices = [];
+  currentIndex = 0;
+  renderNotices();
+}
 }
 
 loadNotices();
+async function loadNotices() {
+  try {
+    const res = await fetch("./notices.json");
+    const data = await res.json();
+
+    console.log("불러온 notices.json:", data);
+    console.log("items:", data.items);
+
+    notices = Array.isArray(data.items) ? data.items : [];
+    currentIndex = 0;
+    renderNotices();
+  } 
+  catch (error) {
+    console.error("공지 불러오기 실패:", error);
+    notices = [];
+    currentIndex = 0;
+    renderNotices();
+  }
+}
