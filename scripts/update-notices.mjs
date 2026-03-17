@@ -2,9 +2,10 @@ import fs from "node:fs/promises";
 import { chromium } from "playwright";
 
 const BOARD_URL = "https://community.withhive.com/dvc/ko/board/5";
+const DEFAULT_IMAGE = "images/default-notice.png";
 
 function normalize(text) {
-  return String(text)
+  return String(text || "")
     .replace(/\s+/g, " ")
     .replace(/\u00A0/g, " ")
     .trim();
@@ -16,8 +17,16 @@ function makeKey(text) {
     .replace(/[^\[\]가-힣a-zA-Z0-9]/g, "");
 }
 
+function toAbsoluteUrl(url) {
+  if (!url) return "";
+  if (url.startsWith("http://") || url.startsWith("https://")) return url;
+  if (url.startsWith("//")) return `https:${url}`;
+  if (url.startsWith("/")) return `https://community.withhive.com${url}`;
+  return "";
+}
+
 async function collectTitles(page) {
-  await page.goto(BOARD_URL, { waitUntil: "networkidle" });
+  await page.goto(BOARD_URL, { waitUntil: "networkidle", timeout: 120000 });
   await page.waitForTimeout(4000);
 
   const lines = await page.evaluate(() => {
@@ -58,14 +67,12 @@ async function collectTitles(page) {
 
 async function tryClickCandidate(page, locator) {
   const oldUrl = page.url();
-
   const popupPromise = page.context().waitForEvent("page", { timeout: 3000 }).catch(() => null);
 
   try {
     await locator.scrollIntoViewIfNeeded();
     await page.waitForTimeout(300);
-
-    await locator.click({ force: true, timeout: 3000 });
+    await locator.click({ force: true, timeout: 5000 });
     await page.waitForTimeout(1500);
 
     const popup = await popupPromise;
@@ -73,13 +80,13 @@ async function tryClickCandidate(page, locator) {
       await popup.waitForLoadState("networkidle").catch(() => {});
       const popupUrl = popup.url();
       await popup.close().catch(() => {});
-      if (popupUrl && popupUrl !== "about:blank") {
+      if (popupUrl && popupUrl !== "about:blank" && !popupUrl.startsWith("javascript:")) {
         return popupUrl;
       }
     }
 
     const newUrl = page.url();
-    if (newUrl && newUrl !== oldUrl) {
+    if (newUrl && newUrl !== oldUrl && !newUrl.startsWith("javascript:")) {
       return newUrl;
     }
   } catch {
@@ -90,31 +97,23 @@ async function tryClickCandidate(page, locator) {
 }
 
 async function findRealLink(page, title) {
-  await page.goto(BOARD_URL, { waitUntil: "networkidle" });
+  await page.goto(BOARD_URL, { waitUntil: "networkidle", timeout: 120000 });
   await page.waitForTimeout(3000);
 
   const exact = page.getByText(title, { exact: true });
   const count = await exact.count().catch(() => 0);
 
-  if (!count) {
-    return BOARD_URL;
-  }
+  if (!count) return BOARD_URL;
 
-  // 보통 아래 목록 쪽이 마지막에 있는 경우가 많음
   for (let i = count - 1; i >= 0; i--) {
     const textNode = exact.nth(i);
 
-    // 1차: 텍스트 자체 클릭
     let url = await tryClickCandidate(page, textNode);
-    if (url && url !== BOARD_URL && !url.startsWith("javascript:")) {
-      return url;
-    }
+    if (url && url !== BOARD_URL) return url;
 
-    // 다시 원래 페이지 복귀
-    await page.goto(BOARD_URL, { waitUntil: "networkidle" });
+    await page.goto(BOARD_URL, { waitUntil: "networkidle", timeout: 120000 });
     await page.waitForTimeout(1500);
 
-    // 2차: 가장 가까운 클릭 가능한 부모를 JS로 표시
     const marked = await exact.nth(i).evaluate((el) => {
       let node = el;
       let depth = 0;
@@ -146,16 +145,44 @@ async function findRealLink(page, title) {
     if (marked) {
       const markedLocator = page.locator('[data-oai-click-target="true"]').last();
       url = await tryClickCandidate(page, markedLocator);
-      if (url && url !== BOARD_URL && !url.startsWith("javascript:")) {
-        return url;
-      }
+      if (url && url !== BOARD_URL) return url;
     }
 
-    await page.goto(BOARD_URL, { waitUntil: "networkidle" });
+    await page.goto(BOARD_URL, { waitUntil: "networkidle", timeout: 120000 });
     await page.waitForTimeout(1500);
   }
 
   return BOARD_URL;
+}
+
+async function extractImageFromArticle(browser, articleUrl) {
+  if (!articleUrl || articleUrl === BOARD_URL) return DEFAULT_IMAGE;
+
+  const page = await browser.newPage();
+  try {
+    await page.goto(articleUrl, { waitUntil: "networkidle", timeout: 120000 });
+    await page.waitForTimeout(2500);
+
+    const image = await page.evaluate(() => {
+      const get = (selector, attr = "content") => {
+        const el = document.querySelector(selector);
+        return el ? el.getAttribute(attr) || "" : "";
+      };
+
+      return (
+        get('meta[property="og:image"]') ||
+        get('meta[name="twitter:image"]') ||
+        get("article img", "src") ||
+        get("img", "src")
+      );
+    });
+
+    return toAbsoluteUrl(image) || DEFAULT_IMAGE;
+  } catch {
+    return DEFAULT_IMAGE;
+  } finally {
+    await page.close().catch(() => {});
+  }
 }
 
 async function main() {
@@ -167,16 +194,18 @@ async function main() {
 
   for (const title of titles) {
     const link = await findRealLink(page, title);
+    const image = await extractImageFromArticle(browser, link);
 
     items.push({
       title,
       link,
       date: "",
       category: "공지사항",
-      image: "images/default-notice.png"
+      image
     });
   }
 
+  await page.close().catch(() => {});
   await browser.close();
 
   const payload = {
