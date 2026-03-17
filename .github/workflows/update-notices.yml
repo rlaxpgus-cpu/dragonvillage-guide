@@ -3,7 +3,7 @@ name: Update DVC Notices
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 */3 * * *"
+    - cron: "*/30 * * * *"
 
 permissions:
   contents: write
@@ -15,206 +15,38 @@ jobs:
     steps:
       - name: 저장소 가져오기
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Node.js 설치
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: 20
 
-      - name: Playwright 설치
+      - name: 패키지 설치
+        run: npm ci
+
+      - name: Playwright 브라우저 설치
+        run: npx playwright install --with-deps chromium
+
+      - name: 공지 데이터 생성
+        run: node scripts/update-notices.mjs
+
+      - name: 변경 확인
+        id: changes
+        shell: bash
         run: |
-          npm init -y
-          npm install playwright
-          npx playwright install --with-deps chromium
+          if git diff --quiet notices.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
 
-      - name: 공지사항 수집 후 notices.json 갱신
-        run: |
-          node <<'EOF'
-          const fs = require("fs");
-          const path = require("path");
-          const { chromium } = require("playwright");
-
-          const BOARD_URL = "https://community.withhive.com/dvc/ko/board/5";
-          const OUTPUT_PATH = path.join(process.cwd(), "notices.json");
-          const DEFAULT_IMAGE = "./images/default-notice.png";
-
-          function normalizeText(text) {
-            return String(text || "")
-              .replace(/\s+/g, " ")
-              .replace(/\u00a0/g, " ")
-              .trim();
-          }
-
-          function normalizeLink(href) {
-            if (!href) return "";
-            if (href.startsWith("http://") || href.startsWith("https://")) return href;
-            if (href.startsWith("/")) return `https://community.withhive.com${href}`;
-            return "";
-          }
-
-          function extractDateFromText(text) {
-            const raw = normalizeText(text);
-
-            let match = raw.match(/(\d{4})[.\-/]\s*(\d{1,2})[.\-/]\s*(\d{1,2})/);
-            if (!match) {
-              match = raw.match(/(\d{2})[.\-/]\s*(\d{1,2})[.\-/]\s*(\d{1,2})/);
-              if (match) {
-                const yy = Number(match[1]);
-                const yyyy = yy >= 70 ? 1900 + yy : 2000 + yy;
-                return `${yyyy}-${String(match[2]).padStart(2, "0")}-${String(match[3]).padStart(2, "0")}`;
-              }
-              return "";
-            }
-
-            return `${match[1]}-${String(match[2]).padStart(2, "0")}-${String(match[3]).padStart(2, "0")}`;
-          }
-
-          async function getBoardLinks(page) {
-            await page.goto(BOARD_URL, { waitUntil: "networkidle", timeout: 120000 });
-            await page.waitForTimeout(5000);
-
-            const links = await page.$$eval('a[href*="/dvc/ko/board/5/"]', anchors => {
-              return anchors.map(a => ({
-                href: a.getAttribute("href") || "",
-                text: (a.textContent || "").trim()
-              }));
-            });
-
-            const filtered = [];
-            const seen = new Set();
-
-            for (const item of links) {
-              const href = item.href || "";
-              const text = (item.text || "").replace(/\s+/g, " ").trim();
-
-              if (!/\/dvc\/ko\/board\/5\/\d+$/.test(href)) continue;
-              if (!text || text.length < 4) continue;
-              if (text === "Image") continue;
-
-              const abs = href.startsWith("http") ? href : `https://community.withhive.com${href}`;
-
-              if (seen.has(abs)) continue;
-              seen.add(abs);
-
-              filtered.push({
-                link: abs,
-                title: text
-              });
-            }
-
-            return filtered.slice(0, 8);
-          }
-
-          async function getArticleData(browser, item) {
-            const page = await browser.newPage();
-
-            try {
-              await page.goto(item.link, { waitUntil: "networkidle", timeout: 120000 });
-              await page.waitForTimeout(2500);
-
-              const data = await page.evaluate(() => {
-                const text = (sel) => {
-                  const el = document.querySelector(sel);
-                  return el ? (el.textContent || "").trim() : "";
-                };
-
-                const attr = (sel, name) => {
-                  const el = document.querySelector(sel);
-                  return el ? (el.getAttribute(name) || "") : "";
-                };
-
-                const allText = Array.from(document.querySelectorAll("time, span, p, div"))
-                  .map(el => (el.textContent || "").trim())
-                  .filter(Boolean);
-
-                const title =
-                  attr('meta[property="og:title"]', "content") ||
-                  text("h1") ||
-                  text("h2");
-
-                const image =
-                  attr('meta[property="og:image"]', "content") ||
-                  attr('meta[name="twitter:image"]', "content") ||
-                  attr("article img", "src") ||
-                  attr("img", "src");
-
-                return {
-                  title,
-                  image,
-                  texts: allText
-                };
-              });
-
-              const bestTextForDate = data.texts.find(t =>
-                /\d{4}[.\-/]\s*\d{1,2}[.\-/]\s*\d{1,2}/.test(t) ||
-                /\d{2}[.\-/]\s*\d{1,2}[.\-/]\s*\d{1,2}/.test(t)
-              ) || "";
-
-              const finalTitle = normalizeText(data.title || item.title);
-              const finalImage = normalizeLink(data.image) || DEFAULT_IMAGE;
-              const finalDate = extractDateFromText(bestTextForDate);
-
-              return {
-                title: finalTitle || item.title,
-                link: item.link,
-                image: finalImage,
-                date: finalDate || ""
-              };
-            } catch (error) {
-              return {
-                title: item.title,
-                link: item.link,
-                image: DEFAULT_IMAGE,
-                date: ""
-              };
-            } finally {
-              await page.close();
-            }
-          }
-
-          (async () => {
-            const browser = await chromium.launch({ headless: true });
-            const boardPage = await browser.newPage();
-
-            try {
-              const boardLinks = await getBoardLinks(boardPage);
-
-              const notices = [];
-              for (const item of boardLinks) {
-                const article = await getArticleData(browser, item);
-                notices.push(article);
-              }
-
-              const cleaned = notices
-                .filter(item => item.link && item.title)
-                .slice(0, 6);
-
-              if (!cleaned.length) {
-                throw new Error("공지사항을 추출하지 못했습니다.");
-              }
-
-              fs.writeFileSync(
-                OUTPUT_PATH,
-                JSON.stringify(cleaned, null, 2),
-                "utf-8"
-              );
-
-              console.log("notices.json 업데이트 완료");
-              console.log(cleaned);
-            } finally {
-              await boardPage.close();
-              await browser.close();
-            }
-          })().catch(error => {
-            console.error(error);
-            process.exit(1);
-          });
-          EOF
-
-      - name: 변경사항 커밋
+      - name: notices.json 커밋 및 푸시
+        if: steps.changes.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add notices.json
-          git diff --cached --quiet && echo "변경 없음" || git commit -m "자동 업데이트: notices.json"
+          git commit -m "자동 공지 업데이트"
           git push
