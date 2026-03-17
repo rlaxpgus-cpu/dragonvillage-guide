@@ -9,6 +9,9 @@ let currentIndex = 0;
 let autoSlideInterval = null;
 const AUTO_SLIDE_DELAY = 4000;
 
+const DEFAULT_NOTICE_IMAGE = "./images/default-notice.png";
+const DEFAULT_NOTICE_LINK = "https://community.withhive.com/dvc/ko";
+
 function startAutoSlide() {
   stopAutoSlide();
 
@@ -31,6 +34,11 @@ function resetAutoSlide() {
   startAutoSlide();
 }
 
+function getImageSrc(imagePath) {
+  if (!imagePath) return DEFAULT_NOTICE_IMAGE;
+  return String(imagePath).replace(/^\/+/, "./");
+}
+
 function renderNotices() {
   if (!noticeTrack || !noticeDots) return;
 
@@ -40,8 +48,8 @@ function renderNotices() {
   if (!notices.length) {
     noticeTrack.innerHTML = `
       <div class="notice-slide active">
-        <a href="https://community.withhive.com/dvc/ko" target="_blank" rel="noopener noreferrer">
-          <img src="/images/default-notice.png" alt="기본 공지 이미지">
+        <a href="${DEFAULT_NOTICE_LINK}" target="_blank" rel="noopener noreferrer">
+          <img src="${DEFAULT_NOTICE_IMAGE}" alt="기본 공지 이미지">
         </a>
         <div class="notice-caption">공지 데이터가 없습니다.</div>
       </div>
@@ -53,18 +61,17 @@ function renderNotices() {
     const slide = document.createElement("div");
     slide.className = `notice-slide ${index === currentIndex ? "active" : ""}`;
 
-    const imageSrc = notice.image
-      ? `/${String(notice.image).replace(/^\/+/, "")}`
-      : "/images/default-notice.png";
-
-    const noticeLink = notice.link || "https://community.withhive.com/dvc/ko";
+    const imageSrc = getImageSrc(notice.image);
+    const noticeLink = notice.link || DEFAULT_NOTICE_LINK;
+    const noticeTitle = notice.title || "공지 제목 없음";
+    const noticeCategory = notice.category || "공지사항";
 
     slide.innerHTML = `
       <a href="${noticeLink}" target="_blank" rel="noopener noreferrer">
-        <img src="${imageSrc}" alt="${notice.title}">
+        <img src="${imageSrc}" alt="${noticeTitle}">
       </a>
       <div class="notice-caption">
-        <strong>[${notice.category || "공지사항"}]</strong> ${notice.title}
+        <strong>[${noticeCategory}]</strong> ${noticeTitle}
       </div>
     `;
 
@@ -76,7 +83,7 @@ function renderNotices() {
       }
 
       img.dataset.fallbackApplied = "true";
-      img.src = "/images/default-notice.png";
+      img.src = DEFAULT_NOTICE_IMAGE;
     };
 
     noticeTrack.appendChild(slide);
@@ -122,11 +129,22 @@ noticeTrack?.addEventListener("mouseleave", startAutoSlide);
 async function loadNotices() {
   try {
     const res = await fetch("./notices.json");
+
+    if (!res.ok) {
+      throw new Error(`HTTP 오류: ${res.status}`);
+    }
+
     const data = await res.json();
 
-    notices = Array.isArray(data.items) ? data.items : [];
-    currentIndex = 0;
+    if (Array.isArray(data)) {
+      notices = data;
+    } else if (Array.isArray(data.items)) {
+      notices = data.items;
+    } else {
+      notices = [];
+    }
 
+    currentIndex = 0;
     renderNotices();
     startAutoSlide();
   } catch (error) {

@@ -437,11 +437,11 @@ th {
 }
 
 .notice-slide img {
+  display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 24px;
-  border: 2px solid #111111;
+  height: 320px;
+  object-fit: contain;
+  background: #000;
 }
 
 .notice-arrow {
