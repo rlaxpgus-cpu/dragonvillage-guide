@@ -1,102 +1,187 @@
 import fs from "node:fs/promises";
-import { url } from "node:inspector";
 import { chromium } from "playwright";
 
-const BOARDS = [
-  {
-    url: "https://community.withhive.com/dvc/ko/board/5",
-    category: "공지사항"
-  },
-  {
-     url: "https://community.withhive.com/dvc/ko/board/6",
-    category: "업데이트"
+const BOARD_URL = "https://community.withhive.com/dvc/ko/board/5";
+
+function normalize(text) {
+  return String(text)
+    .replace(/\s+/g, " ")
+    .replace(/\u00A0/g, " ")
+    .trim();
+}
+
+function makeKey(text) {
+  return normalize(text)
+    .replace(/\s+/g, "")
+    .replace(/[^\[\]가-힣a-zA-Z0-9]/g, "");
+}
+
+async function collectTitles(page) {
+  await page.goto(BOARD_URL, { waitUntil: "networkidle" });
+  await page.waitForTimeout(4000);
+
+  const lines = await page.evaluate(() => {
+    const text = document.body.innerText || "";
+    let arr = text
+      .split("\n")
+      .map((v) => v.trim())
+      .filter(Boolean);
+
+    const start = arr.findIndex((v) => /^공지사항\(\d+\)$/.test(v));
+    if (start !== -1) {
+      arr = arr.slice(start + 1);
+    }
+
+    return arr;
+  });
+
+  const allowedPrefixes = ["[공지]", "[이벤트]", "[안내]"];
+  const seen = new Set();
+  const result = [];
+
+  for (const rawLine of lines) {
+    const line = normalize(rawLine);
+
+    if (line.startsWith("[업데이트]")) continue;
+    if (!allowedPrefixes.some((v) => line.startsWith(v))) continue;
+    if (line.length < 5 || line.length > 100) continue;
+
+    const key = makeKey(line);
+    if (seen.has(key)) continue;
+
+    seen.add(key);
+    result.push(line);
   }
-];
-async function scrapeBoard(page, board) {
-  await page.goto(board.url, { waitUntil: "networkidle" });
-  await page.waitForTimeout(5000);
 
-  const items = await page.evaluate((board) => {
-    const results = [];
-    const lines = [...document.querySelectorAll("li, div, article")];
+  return result.slice(0, 5);
+}
 
-    for (const el of lines) {
-      const text = (el.innerText || "").trim();
-      if (!text) continue;
+async function tryClickCandidate(page, locator) {
+  const oldUrl = page.url();
 
-      const firstLine = text.split("\n")[0].trim();
+  const popupPromise = page.context().waitForEvent("page", { timeout: 3000 }).catch(() => null);
 
-      if (!firstLine) continue;
-      if (firstLine.length < 5) continue;
-      if (firstLine.length > 80) continue;
+  try {
+    await locator.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(300);
 
-      if (
-        firstLine.includes("브랜드 사이트") ||
-        firstLine.includes("전체글") ||
-        firstLine.includes("새소식") ||
-        firstLine.includes("공지사항") ||
-        firstLine.includes("업데이트") ||
-        firstLine.includes("이벤트") ||
-        firstLine.includes("마케팅&컨텐츠") ||
-        firstLine.includes("개발자 노트") ||
-        firstLine.includes("게임 가이드") ||
-        firstLine.includes("커뮤니티")
-      ) {
-        continue;
+    await locator.click({ force: true, timeout: 3000 });
+    await page.waitForTimeout(1500);
+
+    const popup = await popupPromise;
+    if (popup) {
+      await popup.waitForLoadState("networkidle").catch(() => {});
+      const popupUrl = popup.url();
+      await popup.close().catch(() => {});
+      if (popupUrl && popupUrl !== "about:blank") {
+        return popupUrl;
       }
-
-      if (
-        firstLine === "한국어" ||
-        firstLine === "English" ||
-        firstLine === "日本語"
-      ) {
-        continue;
-      }
-
-      if (!firstLine.includes("[") && !/\d{4}/.test(text)) continue;
-
-      results.push({
-        title: firstLine,
-        link: board.url,
-        date: "",
-        category: board.category,
-        image: "images/default-notice.png"
-      });
     }
 
-    const unique = [];
-    const seen = new Set();
+    const newUrl = page.url();
+    if (newUrl && newUrl !== oldUrl) {
+      return newUrl;
+    }
+  } catch {
+    // ignore
+  }
 
-    for (const item of results) {
-      if (seen.has(item.title)) continue;
-      seen.add(item.title);
-      unique.push(item);
+  return null;
+}
+
+async function findRealLink(page, title) {
+  await page.goto(BOARD_URL, { waitUntil: "networkidle" });
+  await page.waitForTimeout(3000);
+
+  const exact = page.getByText(title, { exact: true });
+  const count = await exact.count().catch(() => 0);
+
+  if (!count) {
+    return BOARD_URL;
+  }
+
+  // 보통 아래 목록 쪽이 마지막에 있는 경우가 많음
+  for (let i = count - 1; i >= 0; i--) {
+    const textNode = exact.nth(i);
+
+    // 1차: 텍스트 자체 클릭
+    let url = await tryClickCandidate(page, textNode);
+    if (url && url !== BOARD_URL && !url.startsWith("javascript:")) {
+      return url;
     }
 
-    return unique.slice(0, 5);
-  }, board);
+    // 다시 원래 페이지 복귀
+    await page.goto(BOARD_URL, { waitUntil: "networkidle" });
+    await page.waitForTimeout(1500);
 
-  return items;
+    // 2차: 가장 가까운 클릭 가능한 부모를 JS로 표시
+    const marked = await exact.nth(i).evaluate((el) => {
+      let node = el;
+      let depth = 0;
+
+      while (node && depth < 8) {
+        const tag = node.tagName?.toLowerCase?.() || "";
+        const hasOnClick = typeof node.onclick === "function" || node.hasAttribute?.("onclick");
+        const href = node.getAttribute?.("href");
+        const role = node.getAttribute?.("role");
+
+        if (
+          tag === "a" ||
+          tag === "button" ||
+          hasOnClick ||
+          href !== null ||
+          role === "link"
+        ) {
+          node.setAttribute("data-oai-click-target", "true");
+          return true;
+        }
+
+        node = node.parentElement;
+        depth++;
+      }
+
+      return false;
+    }).catch(() => false);
+
+    if (marked) {
+      const markedLocator = page.locator('[data-oai-click-target="true"]').last();
+      url = await tryClickCandidate(page, markedLocator);
+      if (url && url !== BOARD_URL && !url.startsWith("javascript:")) {
+        return url;
+      }
+    }
+
+    await page.goto(BOARD_URL, { waitUntil: "networkidle" });
+    await page.waitForTimeout(1500);
+  }
+
+  return BOARD_URL;
 }
 
 async function main() {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
 
-  let all = [];
+  const titles = await collectTitles(page);
+  const items = [];
 
-  for (const board of BOARDS) {
-    const result = await scrapeBoard(page, board);
-    console.log(`[${board.category}] ${result.length}개 수집`);
-    console.log(result);
-    all.push(...result);
+  for (const title of titles) {
+    const link = await findRealLink(page, title);
+
+    items.push({
+      title,
+      link,
+      date: "",
+      category: "공지사항",
+      image: "images/default-notice.png"
+    });
   }
 
   await browser.close();
 
   const payload = {
     updatedAt: new Date().toISOString(),
-    items: all
+    items
   };
 
   await fs.writeFile(
@@ -105,7 +190,8 @@ async function main() {
     { encoding: "utf-8" }
   );
 
-  console.log(`notices.json 저장 완료: ${all.length}개`);
+  console.log(items);
+  console.log(`notices.json 저장 완료: ${items.length}개`);
 }
 
 main().catch(console.error);

@@ -1,60 +1,39 @@
 {
-  "updatedAt": "2026-03-17T09:58:27.542Z",
+  "updatedAt": "2026-03-17T12:23:17.365Z",
   "items": [
     {
+      "title": "[이벤트] 스카디 랜드마크 인증 이벤트 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/20/309753",
+      "date": "",
+      "category": "공지사항",
+      "image": "images/default-notice.png"
+    },
+    {
       "title": "[공지] 2026년 3월. 행운의 알 [스카디]",
-      "link": "https://community.withhive.com/dvc/ko/board/5",
+      "link": "https://community.withhive.com/dvc/ko/board/5/309669",
+      "date": "",
+      "category": "공지사항",
+      "image": "images/default-notice.png"
+    },
+    {
+      "title": "[이벤트] 제 12회 자작룡 이벤트 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/20/309166",
       "date": "",
       "category": "공지사항",
       "image": "images/default-notice.png"
     },
     {
       "title": "[안내] 2026년 3월. 이달의 알 [오딘]",
-      "link": "https://community.withhive.com/dvc/ko/board/5",
-      "date": "",
-      "category": "공지사항",
-      "image": "images/default-notice.png"
-    },
-    {
-      "title": "토호우 대륙, 적마룡과 바리토의 관찰일지",
-      "link": "https://community.withhive.com/dvc/ko/board/5",
+      "link": "https://community.withhive.com/dvc/ko/board/5/308728",
       "date": "",
       "category": "공지사항",
       "image": "images/default-notice.png"
     },
     {
       "title": "[안내] 3월 12일(목) 알려진 문제사항 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/5",
+      "link": "https://community.withhive.com/dvc/ko/board/5/309784",
       "date": "",
       "category": "공지사항",
-      "image": "images/default-notice.png"
-    },
-    {
-      "title": "[안내] 매크로 등 약관/정책 위반 계정 게임 이용제한 안내 [106차]",
-      "link": "https://community.withhive.com/dvc/ko/board/5",
-      "date": "",
-      "category": "공지사항",
-      "image": "images/default-notice.png"
-    },
-    {
-      "title": "[공지] 2026년 3월. 행운의 알 [스카디]",
-      "link": "https://community.withhive.com/dvc/ko/board/6",
-      "date": "",
-      "category": "업데이트",
-      "image": "images/default-notice.png"
-    },
-    {
-      "title": "[안내] 2026년 3월. 이달의 알 [오딘]",
-      "link": "https://community.withhive.com/dvc/ko/board/6",
-      "date": "",
-      "category": "업데이트",
-      "image": "images/default-notice.png"
-    },
-    {
-      "title": "토호우 대륙, 적마룡과 바리토의 관찰일지",
-      "link": "https://community.withhive.com/dvc/ko/board/6",
-      "date": "",
-      "category": "업데이트",
       "image": "images/default-notice.png"
     }
   ]
