@@ -81,7 +81,7 @@ ol {
 
 .site-title {
   position: absolute;
-  left: -400px;
+  left: -300px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.3rem;
@@ -106,7 +106,7 @@ ol {
 
 .nav {
   position: absolute;
-  right: -400px;
+  right: -300px;
   top: 50%;
   transform: translateY(-50%);
 }
