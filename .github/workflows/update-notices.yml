@@ -1,42 +1,58 @@
-import fs from "fs";
+name: Update DVC Notices
 
-// 기존 데이터 읽기
-let existing = [];
-try {
-  const raw = fs.readFileSync("notices.json", "utf-8");
-  existing = JSON.parse(raw);
-} catch {
-  existing = [];
-}
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 1,4,7,10 * * *"
 
-// 🔹 1. [업데이트] 필터링
-const filteredNew = scrapedNotices.filter(n =>
-  !n.title.includes("[업데이트]")
-);
+permissions:
+  contents: write
 
-// 🔹 2. 기존 + 신규 합치기
-const merged = [...filteredNew, ...existing];
+jobs:
+  update-notices:
+    runs-on: ubuntu-latest
 
-// 🔹 3. link 기준 중복 제거
-const uniqueMap = new Map();
-for (const notice of merged) {
-  if (!notice.link) continue;
-  uniqueMap.set(notice.link, notice);
-}
-const uniqueList = Array.from(uniqueMap.values());
+    steps:
+      - name: 저장소 가져오기
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-// 🔹 4. 최신순 정렬 (date 있으면)
-uniqueList.sort((a, b) => {
-  return new Date(b.date) - new Date(a.date);
-});
+      - name: Node.js 설치
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-// 🔹 5. 최신 5개만 유지
-const finalNotices = uniqueList.slice(0, 5);
+      - name: 패키지 설치
+        run: npm ci
 
-// 🔹 6. 저장
-fs.writeFileSync(
-  "notices.json",
-  JSON.stringify(finalNotices, null, 2)
-);
+      - name: Playwright 브라우저 설치
+        run: npx playwright install --with-deps chromium
 
-console.log("공지 업데이트 완료:", finalNotices.length, "개");
+      - name: 공지 데이터 생성
+        run: node scripts/update-notices.mjs
+
+      - name: 변경 확인
+        id: changes
+        shell: bash
+        run: |
+          if git diff --quiet notices.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: notices.json 커밋 및 푸시
+        if: steps.changes.outputs.changed == 'true'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add notices.json
+          git commit -m "자동 공지 업데이트" || echo "커밋할 변경 없음"
+          git pull --rebase origin main || {
+            echo "rebase 실패"
+            git rebase --abort || true
+            exit 1
+          }
+          git push origin main
