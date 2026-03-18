@@ -3,11 +3,13 @@ import { chromium } from "playwright";
 
 const BOARD_URL = "https://community.withhive.com/dvc/ko/board/5";
 const DEFAULT_IMAGE = "images/default-notice.png";
+const MAX_ITEMS = 5;
+const ALLOWED_PREFIXES = ["[공지]", "[이벤트]", "[안내]"];
 
 function normalize(text) {
   return String(text || "")
-    .replace(/\s+/g, " ")
     .replace(/\u00A0/g, " ")
+    .replace(/\s+/g, " ")
     .trim();
 }
 
@@ -25,9 +27,27 @@ function toAbsoluteUrl(url) {
   return "";
 }
 
-async function collectTitles(page) {
+function isAllowedTitle(title) {
+  const text = normalize(title);
+
+  if (!text) return false;
+  if (text.length < 5 || text.length > 120) return false;
+
+  const hasAllowedPrefix = ALLOWED_PREFIXES.some((prefix) => text.startsWith(prefix));
+  if (!hasAllowedPrefix) return false;
+
+  if (text.includes("업데이트")) return false;
+
+  return true;
+}
+
+async function openBoard(page) {
   await page.goto(BOARD_URL, { waitUntil: "networkidle", timeout: 120000 });
-  await page.waitForTimeout(4000);
+  await page.waitForTimeout(2500);
+}
+
+async function collectTitles(page) {
+  await openBoard(page);
 
   const lines = await page.evaluate(() => {
     const text = document.body.innerText || "";
@@ -36,33 +56,32 @@ async function collectTitles(page) {
       .map((v) => v.trim())
       .filter(Boolean);
 
-    const start = arr.findIndex((v) => /^공지사항\(\d+\)$/.test(v));
-    if (start !== -1) {
-      arr = arr.slice(start + 1);
+    const startIndex = arr.findIndex((v) => /^공지사항\(\d+\)$/.test(v));
+    if (startIndex !== -1) {
+      arr = arr.slice(startIndex + 1);
     }
 
     return arr;
   });
 
-  const allowedPrefixes = ["[공지]", "[이벤트]", "[안내]"];
   const seen = new Set();
   const result = [];
 
   for (const rawLine of lines) {
     const line = normalize(rawLine);
 
-    if (line.startsWith("[업데이트]")) continue;
-    if (!allowedPrefixes.some((v) => line.startsWith(v))) continue;
-    if (line.length < 5 || line.length > 100) continue;
+    if (!isAllowedTitle(line)) continue;
 
     const key = makeKey(line);
     if (seen.has(key)) continue;
 
     seen.add(key);
     result.push(line);
+
+    if (result.length >= MAX_ITEMS) break;
   }
 
-  return result.slice(0, 5);
+  return result;
 }
 
 async function tryClickCandidate(page, locator) {
@@ -70,7 +89,7 @@ async function tryClickCandidate(page, locator) {
   const popupPromise = page.context().waitForEvent("page", { timeout: 3000 }).catch(() => null);
 
   try {
-    await locator.scrollIntoViewIfNeeded();
+    await locator.scrollIntoViewIfNeeded().catch(() => {});
     await page.waitForTimeout(300);
     await locator.click({ force: true, timeout: 5000 });
     await page.waitForTimeout(1500);
@@ -80,6 +99,7 @@ async function tryClickCandidate(page, locator) {
       await popup.waitForLoadState("networkidle").catch(() => {});
       const popupUrl = popup.url();
       await popup.close().catch(() => {});
+
       if (popupUrl && popupUrl !== "about:blank" && !popupUrl.startsWith("javascript:")) {
         return popupUrl;
       }
@@ -96,60 +116,60 @@ async function tryClickCandidate(page, locator) {
   return null;
 }
 
+async function markClickableParent(locator) {
+  return locator.evaluate((el) => {
+    let node = el;
+    let depth = 0;
+
+    while (node && depth < 8) {
+      const tag = node.tagName?.toLowerCase?.() || "";
+      const hasOnClick = typeof node.onclick === "function" || node.hasAttribute?.("onclick");
+      const href = node.getAttribute?.("href");
+      const role = node.getAttribute?.("role");
+
+      if (
+        tag === "a" ||
+        tag === "button" ||
+        hasOnClick ||
+        href !== null ||
+        role === "link"
+      ) {
+        node.setAttribute("data-oai-click-target", "true");
+        return true;
+      }
+
+      node = node.parentElement;
+      depth++;
+    }
+
+    return false;
+  }).catch(() => false);
+}
+
 async function findRealLink(page, title) {
-  await page.goto(BOARD_URL, { waitUntil: "networkidle", timeout: 120000 });
-  await page.waitForTimeout(3000);
+  await openBoard(page);
 
-  const exact = page.getByText(title, { exact: true });
-  const count = await exact.count().catch(() => 0);
+  const exactCount = await page.getByText(title, { exact: true }).count().catch(() => 0);
+  if (!exactCount) return BOARD_URL;
 
-  if (!count) return BOARD_URL;
+  for (let i = exactCount - 1; i >= 0; i--) {
+    await openBoard(page);
 
-  for (let i = count - 1; i >= 0; i--) {
-    const textNode = exact.nth(i);
+    const textNode = page.getByText(title, { exact: true }).nth(i);
 
     let url = await tryClickCandidate(page, textNode);
     if (url && url !== BOARD_URL) return url;
 
-    await page.goto(BOARD_URL, { waitUntil: "networkidle", timeout: 120000 });
-    await page.waitForTimeout(1500);
+    await openBoard(page);
 
-    const marked = await exact.nth(i).evaluate((el) => {
-      let node = el;
-      let depth = 0;
-
-      while (node && depth < 8) {
-        const tag = node.tagName?.toLowerCase?.() || "";
-        const hasOnClick = typeof node.onclick === "function" || node.hasAttribute?.("onclick");
-        const href = node.getAttribute?.("href");
-        const role = node.getAttribute?.("role");
-
-        if (
-          tag === "a" ||
-          tag === "button" ||
-          hasOnClick ||
-          href !== null ||
-          role === "link"
-        ) {
-          node.setAttribute("data-oai-click-target", "true");
-          return true;
-        }
-
-        node = node.parentElement;
-        depth++;
-      }
-
-      return false;
-    }).catch(() => false);
+    const freshTextNode = page.getByText(title, { exact: true }).nth(i);
+    const marked = await markClickableParent(freshTextNode);
 
     if (marked) {
       const markedLocator = page.locator('[data-oai-click-target="true"]').last();
       url = await tryClickCandidate(page, markedLocator);
       if (url && url !== BOARD_URL) return url;
     }
-
-    await page.goto(BOARD_URL, { waitUntil: "networkidle", timeout: 120000 });
-    await page.waitForTimeout(1500);
   }
 
   return BOARD_URL;
@@ -161,19 +181,19 @@ async function extractImageFromArticle(browser, articleUrl) {
   const page = await browser.newPage();
   try {
     await page.goto(articleUrl, { waitUntil: "networkidle", timeout: 120000 });
-    await page.waitForTimeout(2500);
+    await page.waitForTimeout(2000);
 
     const image = await page.evaluate(() => {
-      const get = (selector, attr = "content") => {
+      const getAttr = (selector, attr = "content") => {
         const el = document.querySelector(selector);
         return el ? el.getAttribute(attr) || "" : "";
       };
 
       return (
-        get('meta[property="og:image"]') ||
-        get('meta[name="twitter:image"]') ||
-        get("article img", "src") ||
-        get("img", "src")
+        getAttr('meta[property="og:image"]') ||
+        getAttr('meta[name="twitter:image"]') ||
+        getAttr("article img", "src") ||
+        getAttr("img", "src")
       );
     });
 
@@ -189,38 +209,43 @@ async function main() {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
 
-  const titles = await collectTitles(page);
-  const items = [];
+  try {
+    const titles = await collectTitles(page);
+    const items = [];
 
-  for (const title of titles) {
-    const link = await findRealLink(page, title);
-    const image = await extractImageFromArticle(browser, link);
+    for (const title of titles) {
+      const link = await findRealLink(page, title);
+      const image = await extractImageFromArticle(browser, link);
 
-    items.push({
-      title,
-      link,
-      date: "",
-      category: "공지사항",
-      image
-    });
+      items.push({
+        title,
+        link,
+        date: "",
+        category: "공지사항",
+        image
+      });
+    }
+
+    const payload = {
+      updatedAt: new Date().toISOString(),
+      items: items.slice(0, MAX_ITEMS)
+    };
+
+    await fs.writeFile(
+      "notices.json",
+      JSON.stringify(payload, null, 2),
+      { encoding: "utf-8" }
+    );
+
+    console.log(JSON.stringify(payload, null, 2));
+    console.log(`notices.json 저장 완료: ${payload.items.length}개`);
+  } finally {
+    await page.close().catch(() => {});
+    await browser.close().catch(() => {});
   }
-
-  await page.close().catch(() => {});
-  await browser.close();
-
-  const payload = {
-    updatedAt: new Date().toISOString(),
-    items
-  };
-
-  await fs.writeFile(
-    "notices.json",
-    JSON.stringify(payload, null, 2),
-    { encoding: "utf-8" }
-  );
-
-  console.log(items);
-  console.log(`notices.json 저장 완료: ${items.length}개`);
 }
 
-main().catch(console.error);
+main().catch((error) => {
+  console.error("공지사항 업데이트 실패:", error);
+  process.exit(1);
+});
