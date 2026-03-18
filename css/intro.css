@@ -1,297 +1,152 @@
-.guide-section{
-  background:var(--main-white);
-  padding:28px;
-  margin-bottom:24px;
-  border-radius:14px;
-  border:1px solid var(--border);
-  box-shadow:0 3px 12px rgba(0, 0, 0, 0.06);
-  scroll-margin-top:100px;
+/* =========================
+   intro 페이지 전용
+========================= */
+
+.intro-page {
+  background: linear-gradient(
+    to bottom,
+    #adadad 0%,
+    #000000 100%
+  );
 }
 
-.guide-section h2{
-  margin-bottom:18px;
-  font-size:24px;
-  color:var(--main-black);
-  border-bottom:3px solid var(--main-yellow);
-  padding-bottom:10px;
+/* 헤더를 어둡게 덮기 */
+.intro-page .header {
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
 }
 
-.guide-section p{
-  line-height:1.9;
-  color:#444;
-  margin-bottom:18px;
+.intro-page .site-title,
+.intro-page .nav a {
+  color: #fff;
 }
 
-.guide-section p:last-child{
-  margin-bottom:0;
+/* =========================
+   1. 히어로 (첫 화면)
+========================= */
+
+.intro-hero {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  overflow: hidden;
 }
 
-.toc-box{
-  background:#111111;
-  border:1px solid #111111;
+.intro-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.toc-box h2{
-  color:#ffffff;
-  border-bottom:2px solid #444444;
+/* 어둡게 덮는 레이어 */
+.intro-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
 }
 
-.toc{
-  list-style:none;
-  padding:0;
-  margin:0;
+/* 텍스트 */
+.intro-hero-text {
+  position: absolute;
+  left: 8%;
+  bottom: 20%;
+  z-index: 2;
+  max-width: 600px;
 }
 
-.toc li{
-  margin:10px 0;
+.intro-label {
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 12px;
 }
 
-.toc a{
-  text-decoration:none;
-  color:#ffffff;
-  font-weight:500;
-  transition:0.2s ease;
+.intro-hero-text h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 14px;
 }
 
-.toc a:hover{
-  color:#ffd700;
-
-.wiki-layout{
-  display:flex;
-  gap:28px;
-  align-items:flex-start;
+.intro-hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.9);
 }
 
-.wiki-infobox{
-  width:320px;
-  flex-shrink:0;
-  background:var(--main-white);
-  border:1px solid #d9d9d9;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 2px 8px rgba(0, 0, 0, 0.05);
+/* =========================
+   2. 쇼케이스 (공통)
+========================= */
+
+.intro-showcase {
+  padding: 120px 0;
+  text-align: center;
 }
 
-.wiki-infobox h3{
-  background:var(--main-black);
-  color:var(--main-yellow);
-  font-size:20px;
-  font-weight:700;
-  text-align:center;
-  padding:16px;
-  margin:0;
+/* 이미지 (3/2 느낌) */
+.showcase-image-wrap {
+  width: min(1100px, 92%);
+  margin: 0 auto;
 }
 
-.info-thumb{
-  padding:16px;
-  background:#fafafa;
-  border-bottom:1px solid var(--border);
+.showcase-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
-.info-thumb img{
-  width:100%;
-  display:block;
-  border-radius:10px;
+/* 텍스트 */
+.showcase-text {
+  width: min(700px, 90%);
+  margin: 30px auto 0;
 }
 
-.wiki-row{
-  display:flex;
-  border-bottom:1px solid #ececec;
+.showcase-text h3 {
+  font-size: 2rem;
+  margin-bottom: 12px;
 }
 
-.wiki-row:last-child{
-  border-bottom:none;
+.showcase-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.85);
 }
 
-.wiki-label{
-  width:95px;
-  padding:12px;
-  font-weight:700;
-  background:#111111;
-  color:#ffffff;
-  border-right:1px solid #333333;
-  font-size:14px;
+/* =========================
+   3. 섹션 간 여백
+========================= */
+
+.intro-showcase + .intro-showcase {
+  margin-top: 40px;
 }
 
-.wiki-value{
-  flex:1;
-  padding:12px;
-  color:#444;
-  font-size:14px;
-  line-height:1.7;
-  background:#ffffff;
-}
+/* =========================
+   4. 반응형
+========================= */
 
-.wiki-content{
-  flex:1;
-}
+@media (max-width: 900px) {
 
-.wiki-content p{
-  margin:0 0 20px 0;
-  line-height:1.9;
-  color:#444;
-}
-
-.wiki-content p:last-child{
-  margin-bottom:0;
-}
-
-.info-grid{
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:20px;
-}
-
-.info-card{
-  background:#ffffff;
-  border:1px solid #ddd;
-  border-radius:12px;
-  padding:20px;
-  transition:0.25s;
-}
-
-.info-card:hover{
-  transform:translateY(-6px);
-  border-color:#ffd700;
-  box-shadow:0 10px 20px rgba(0,0,0,0.15);
-}
-}
-
-.info-card:hover{
-  border-color:#ffd700;
-  box-shadow:0 6px 14px rgba(0, 0, 0, 0.08);
-  transform:translateY(-4px);
-}
-
-.info-card h3{
-  margin-bottom:10px;
-  color:var(--main-black);
-}
-
-.info-card p{
-  margin:0;
-  color:#555;
-}
-
-.tip{
-  margin-top:20px;
-  background:#111111;
-  border-left:6px solid var(--main-yellow);
-  padding:16px;
-  border-radius:8px;
-  line-height:1.8;
-  color:#ffffff;
-}
-
-@media (max-width:900px){
-  .wiki-layout{
-    flex-direction:column;
+  .intro-hero {
+    height: 90vh;
   }
 
-  .wiki-infobox{
-    width:100%;
+  .intro-hero-text {
+    left: 6%;
+    right: 6%;
+    bottom: 10%;
   }
 
-  .info-grid{
-    grid-template-columns:1fr;
-  }
-}
-.wiki-layout{
-  display:flex;
-  gap:28px;
-  align-items:flex-start;
-}
-
-.wiki-infobox{
-  width:320px;
-  flex-shrink:0;
-  background:#111111;
-  border:1px solid #111111;
-  border-radius:12px;
-  overflow:hidden;
-}
-
-.wiki-infobox h3{
-  background:#111111;
-  color:#ffffff;
-  font-size:20px;
-  font-weight:700;
-  text-align:center;
-  padding:16px;
-  margin:0;
-  border-bottom:1px solid #333333;
-}
-
-.info-thumb{
-  padding:16px;
-  background:#111111;
-  border-bottom:1px solid #333333;
-}
-
-.info-thumb img{
-  width:100%;
-  display:block;
-  border-radius:10px;
-}
-
-.wiki-row{
-  display:flex;
-  border-bottom:1px solid #333333;
-}
-
-.wiki-row:last-child{
-  border-bottom:none;
-}
-
-.wiki-label{
-  width:95px;
-  padding:12px;
-  font-weight:700;
-  background:#000000;
-  color:#ffffff;
-  border-right:1px solid #333333;
-  font-size:14px;
-}
-
-.wiki-value{
-  flex:1;
-  padding:12px;
-  background:#909695;
-  color:#ffffff;
-  font-size:14px;
-  line-height:1.7;
-}
-
-.wiki-value a{
-  color:#ffffff;
-  text-decoration:none;
-  transition:0.2s ease;
-}
-
-.wiki-value a:hover{
-  color:#ffd700;
-}
-
-.wiki-content{
-  flex:1;
-}
-
-.wiki-content p{
-  margin:0 0 20px 0;
-  line-height:1.9;
-  color:#111111;
-}
-
-.wiki-content p:last-child{
-  margin-bottom:0;
-}
-
-@media (max-width:900px){
-  .wiki-layout{
-    flex-direction:column;
+  .intro-showcase {
+    padding: 80px 0;
   }
 
-  .wiki-infobox{
-    width:100%;
+  .showcase-text {
+    margin-top: 20px;
+  }
+
+  .showcase-text p {
+    font-size: 0.95rem;
   }
 }
+<body class="intro-page">

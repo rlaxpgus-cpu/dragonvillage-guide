@@ -8,21 +8,29 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg: #0b0b0b;
+  --surface: #111111;
+  --surface-2: #181818;
+  --surface-3: #101010;
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.78);
+  --muted-soft: rgba(255, 255, 255, 0.65);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: #2d2d2d;
+  --white: #ffffff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: "Malgun Gothic", Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  padding-top: 80px;
-}
 
 img {
   display: block;
   margin: auto;
+  max-width: 100%;
 }
 
 a {
@@ -36,7 +44,6 @@ ol {
 }
 
 /* 공통 컨테이너 */
-
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -44,7 +51,6 @@ ol {
 }
 
 /* 섹션 이동시 헤더에 가리지 않게 */
-
 #intro,
 #start,
 #tips,
@@ -56,7 +62,7 @@ ol {
 }
 
 /* =========================
-   HEADER LAYOUT
+   2. HEADER LAYOUT
 ========================= */
 
 .header {
@@ -65,8 +71,9 @@ ol {
   left: 0;
   width: 100%;
   height: 80px;
-  background: #ffffff;
-  border-bottom: 2px solid #000000;
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(6px);
   z-index: 9999;
 }
 
@@ -78,7 +85,6 @@ ol {
 }
 
 /* 왼쪽 제목 */
-
 .site-title {
   position: absolute;
   left: -300px;
@@ -86,24 +92,23 @@ ol {
   transform: translateY(-50%);
   font-size: 1.3rem;
   font-weight: 800;
-  color: #111;
+  color: var(--white);
   white-space: nowrap;
 }
 
 .site-title:hover {
-  color: #f4d000;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* 중앙 로고 */
-
 .logo {
-  position: center;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-/* 오른쪽 메뉴 */
 
+/* 오른쪽 메뉴 */
 .nav {
   position: absolute;
   right: -300px;
@@ -118,42 +123,60 @@ ol {
 
 .nav a {
   padding: 10px 14px;
-  border: 2px solid #111;
-  background: #111;
-  color: #fff;
+  border: 1px solid #2a2a2a;
+  background: linear-gradient(180deg, #181818 0%, #101010 100%);
+  color: #ffffff;
   font-size: 0.95rem;
   font-weight: 700;
   border-radius: 10px;
-  transition: 0.2s;
+  transition: all 0.2s ease;
 }
 
 .nav a:hover {
-  background: #f4d000;
-  color: #111;
-  border-color: #f4d000;
+  background: linear-gradient(180deg, #222222 0%, #141414 100%);
+  border-color: #3a3a3a;
+  color: #ffffff;
 }
+
 /* =========================
    3. 히어로 영역
 ========================= */
+body {
+  color: #ffffff;
+  background: linear-gradient(
+    to top,
+    #918e8e 0%,
+    #ffffff 100%
+  );
+}
 
 .hero {
-  padding: 70px 20px 60px;
-  border-bottom: 2px solid #111111;
+  padding-top: 80px;
+   padding-bottom: 50px;
+      color: #ffffff;
+  background: linear-gradient(
+    to top,
+
+    #585858 100%
+    );
 }
+
 
 .hero .container {
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   margin-bottom: 18px;
+  letter-spacing: -0.02em;
+  
 }
 
 .hero p {
   max-width: 760px;
-  margin: 0 auto 28px;
-  color: #333333;
+  margin: 0 auto 32px;
+  color: var(--muted);
 }
 
 .hero-buttons {
@@ -167,19 +190,20 @@ ol {
   display: inline-block;
   min-width: 170px;
   padding: 14px 20px;
-  background: #111111;
+  background: #1a1a1a;
   color: #ffffff;
-  border: 2px solid #111111;
+  border: 1px solid #1a1a1a;
   border-radius: 12px;
   font-weight: 700;
   transition: all 0.2s ease;
 }
 
 .hero-buttons a:hover {
-  background: #f4d000;
-  color: #111111;
-  border-color: #f4d000;
+  background: #2e2e2e;
+  color: #ffffff;
+  border-color: #2e2e2e;
 }
+
 .hero-logo {
   width: 420px;
   max-width: 100%;
@@ -193,46 +217,55 @@ ol {
 ========================= */
 
 .section {
-  padding: 70px 0;
-  border-bottom: 1px solid #e5e5e5;
+  padding: 90px 0;
+  border-bottom: 1px solid var(--border);
 }
 
 .section h2 {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   margin-bottom: 14px;
+  letter-spacing: -0.02em;
+  color: #ffffff;
 }
 
 .section p {
-  color: #333333;
+  color: rgb(255, 255, 255);
   margin-bottom: 20px;
 }
 
 /* =========================
    5. 카드 레이아웃
 ========================= */
-    
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 28px;
 }
 
 .card {
-  background: #000000;
+  background: linear-gradient(180deg, #000000 0%, #101010 100%);
   color: #ffffff;
   padding: 24px;
   border-radius: 16px;
-  border: 2px solid #111111;
-  transition: all 0.2s ease;
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow);
+  transition: all 0.25s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: #f4d000;
+  border-color: #555555;
 }
 
 .card h3 {
-  margin-bottom: 12px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: rgb(255, 255, 255);
+  margin-bottom: 0;
 }
 
 .card a {
@@ -242,10 +275,11 @@ ol {
   color: #111111;
   border-radius: 10px;
   font-weight: 700;
+  transition: all 0.2s ease;
 }
 
 .card a:hover {
-  background: #f4d000;
+  background: #dcdcdc;
 }
 
 /* =========================
@@ -255,11 +289,19 @@ ol {
 .info-box,
 .guide-box,
 .tip-box {
-  background: #111111;
+  background: linear-gradient(180deg, #181818 0%, #101010 100%);
   color: #ffffff;
   padding: 24px;
   border-radius: 16px;
   margin-bottom: 20px;
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow);
+}
+
+.info-box p,
+.guide-box p,
+.tip-box p {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .info-box ul,
@@ -282,16 +324,24 @@ ol {
 
 .big-link {
   display: block;
-  background: #111111;
+  background: linear-gradient(180deg, #181818 0%, #101010 100%);
   color: #ffffff;
   padding: 28px 24px;
   border-radius: 16px;
-  border: 2px solid #111111;
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease;
+}
+
+.big-link p {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .big-link:hover {
-  background: #f4d000;
-  color: #111111;
+  background: linear-gradient(180deg, #222222 0%, #141414 100%);
+  color: #ffffff;
+  transform: translateY(-4px);
+  border-color: #555555;
 }
 
 /* =========================
@@ -301,6 +351,7 @@ ol {
 .breadcrumb {
   padding: 20px 0 0;
   font-size: 0.95rem;
+  color: var(--muted);
 }
 
 .breadcrumb a {
@@ -308,7 +359,7 @@ ol {
 }
 
 .breadcrumb a:hover {
-  color: #f4d000;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* =========================
@@ -325,10 +376,16 @@ ol {
 .side-toc {
   position: sticky;
   top: 110px;
-  background: #111111;
+  background: linear-gradient(180deg, #181818 0%, #101010 100%);
   color: #ffffff;
   border-radius: 16px;
   padding: 20px;
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow);
+}
+
+.side-toc p {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .side-toc ul {
@@ -338,13 +395,15 @@ ol {
 }
 
 .side-toc a {
+  display: block;
   padding: 10px 12px;
   border-radius: 10px;
+  transition: all 0.2s ease;
 }
 
 .side-toc a:hover {
-  background: #f4d000;
-  color: #111111;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 
 /* =========================
@@ -354,16 +413,18 @@ ol {
 table {
   width: 100%;
   border-collapse: collapse;
+  background: #111111;
+  color: #ffffff;
 }
 
 th,
 td {
   padding: 14px 12px;
-  border: 1px solid #dddddd;
+  border: 1px solid #2d2d2d;
 }
 
 th {
-  background: #111111;
+  background: #1a1a1a;
   color: #ffffff;
 }
 
@@ -373,8 +434,9 @@ th {
 
 .notice,
 .highlight {
-  background: #fff8cc;
-  border: 2px solid #f4d000;
+  background: #151515;
+  color: #ffffff;
+  border: 1px solid #2d2d2d;
   padding: 18px 20px;
   border-radius: 14px;
 }
@@ -382,7 +444,7 @@ th {
 .warning {
   background: #111111;
   color: #ffffff;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   padding: 18px 20px;
   border-radius: 14px;
 }
@@ -392,7 +454,7 @@ th {
 ========================= */
 
 .footer {
-  background: #000000;
+  background: #111111;
   color: #ffffff;
   padding: 28px 20px;
   margin-top: 40px;
@@ -405,7 +467,7 @@ th {
 }
 
 .footer a:hover {
-  color: #f4d000;
+  color: #cccccc;
 }
 
 /* =========================
@@ -413,8 +475,8 @@ th {
 ========================= */
 
 .notice-section {
-  padding: 60px 0;
-  border-top: 2px solid #111111;
+  padding: 70px 0;
+  border-top: 1px solid var(--border);
 }
 
 .notice-slider {
@@ -441,7 +503,7 @@ th {
   width: 100%;
   height: 320px;
   object-fit: contain;
-  background: #000;
+  background: #ffffff;
 }
 
 .notice-arrow {
@@ -452,13 +514,15 @@ th {
   height: 54px;
   border-radius: 50%;
   border: none;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255, 255, 255, 0.548);
+  color: #000000;
   font-size: 2rem;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .notice-arrow:hover {
-  background: #f4d000;
+  background: #dcdcdc;
 }
 
 .notice-arrow.prev {
@@ -480,7 +544,7 @@ th {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #cfcfcf;
+  background: #ffffff;
   border: none;
   cursor: pointer;
 }
@@ -489,27 +553,14 @@ th {
   width: 28px;
   border-radius: 999px;
   background: #ffffff;
-  border: 2px solid #111111;
 }
 
-/* 검은 박스 안 글자 색 강제 적용 */
-.card,
-.info-box,
-.guide-box,
-.tip-box,
-.big-link,
-.side-toc {
-  background: linear-gradient(180deg, var(--black-box) 0%, var(--black-box-2) 100%);
-  color: var(--white);
-  border: 1px solid #2d2d2d;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
 .notice-caption {
   margin-top: 12px;
   text-align: center;
   font-size: 1rem;
   font-weight: 700;
-  color: #111111;
+  color: #000000;
   line-height: 1.5;
 }
 
@@ -517,12 +568,291 @@ th {
   margin-top: 6px;
   font-size: 0.9rem;
   font-weight: 500;
-  color: #666666;
-}.notice-caption {
-  margin-top: 12px;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #111111;
-  line-height: 1.5;
+  color: var(--muted-soft);
 }
+
+    /* =========================
+      14. 반응형
+    ========================= */
+
+    @media (max-width: 1100px) {
+      .site-title {
+        left: 20px;
+      }
+
+      .nav {
+        right: 20px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      body {
+        padding-top: 70px;
+      }
+
+      .header {
+        height: 70px;
+      }
+
+      .nav-wrap {
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .site-title {
+        position: static;
+        transform: none;
+        display: flex;
+        align-items: center;
+        height: 70px;
+        margin-left: 20px;
+      }
+
+      .nav {
+        position: static;
+        transform: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 70px;
+        margin-right: 20px;
+      }
+
+      .nav ul {
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .nav a {
+        padding: 8px 10px;
+        font-size: 0.88rem;
+      }
+
+      .hero {
+        padding: 70px 20px 60px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .card-grid,
+      .menu-grid,
+      .page-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .page-layout {
+        gap: 20px;
+      }
+
+      .side-toc {
+        position: static;
+      }
+
+      .footer .container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+    /* =========================
+      15. INTRO PAGE
+      intro.html 전용
+    ========================= */
+    
+
+    .intro-page {
+      background: linear-gradient(
+        to bottom,
+        #adadad 0%,
+        #747272 100%
+      );
+    }
+
+    /* intro 페이지 헤더 전용 */
+    .intro-page .header {
+      background: rgba(0, 0, 0, 0.6);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(6px);
+    }
+
+    .intro-page .site-title,
+    .intro-page .nav a {
+      color: #ffffff;
+    }
+
+    /* =========================
+      16. INTRO HERO
+    ========================= */
+.intro-page .intro-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+}
+    .intro-page .intro-hero-image {
+      
+   filter: brightness(1.15) contrast(1.4) saturate(1.2);
+  position: absolute;
+  right: -5%;
+  bottom: 0;
+  height: 110%;
+  width: auto;
+  object-fit: contain;
+}
+
+    .intro-page .intro-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .intro-page .intro-hero-text {
+      position: absolute;
+      left: 8%;
+      bottom: 20%;
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .intro-page .intro-label {
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 12px;
+    }
+
+    .intro-page .intro-hero-text h2 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .intro-page .intro-hero-text p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 0;
+    }
+.intro-page .intro-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(to right, #000 40%, transparent);
+  z-index: 1;
+}
+    /* =========================
+      17. INTRO SHOWCASE
+    ========================= */
+
+ .intro-page .intro-showcase {
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+    .intro-page .showcase-image-wrap {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+  .intro-page .showcase-image {
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+  image-rendering: pixelated;
+
+  position: relative;
+  left: 40%;
+  transform: translateX(-50%);
+}
+
+    .intro-page .showcase-text {
+      width: min(700px, 90%);
+      margin: 30px auto 0;
+    }
+
+    .intro-page .showcase-text h3 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .intro-page .showcase-text p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 0;
+    }
+
+    .intro-page .intro-showcase + .intro-showcase {
+      margin-top: 40px;
+    }
+
+    /* =========================
+      18. INTRO PAGE RESPONSIVE
+    ========================= */
+
+    @media (max-width: 900px) {
+      .intro-page .intro-hero {
+        height: 90vh;
+      }
+
+      .intro-page .intro-hero-text {
+        left: 6%;
+        right: 6%;
+        bottom: 10%;
+        max-width: none;
+      }
+
+      .intro-page .intro-showcase {
+        padding: 80px 0;
+      }
+
+      .intro-page .showcase-text {
+        margin-top: 20px;
+      }
+
+      .intro-page .showcase-text p {
+        font-size: 0.95rem;
+      }
+    }
+   /* =========================
+   HOME PAGE 전용 (index)
+========================= */
+
+.home-page {
+  background: linear-gradient(
+    to bottom,
+    #adadad 0%,
+    #000000 100%
+  );
+}
+
+/* 헤더 스타일 */
+.home-page .header {
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+}
+
+.home-page .site-title,
+.home-page .nav a {
+  color: #fff;
+}
+
