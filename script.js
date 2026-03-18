@@ -128,7 +128,9 @@ noticeTrack?.addEventListener("mouseleave", startAutoSlide);
 
 async function loadNotices() {
   try {
-    const res = await fetch("./notices.json");
+    const res = await fetch(`./notices.json?v=${Date.now()}`, {
+  cache: "no-store"
+});
 
     if (!res.ok) {
       throw new Error(`HTTP 오류: ${res.status}`);
