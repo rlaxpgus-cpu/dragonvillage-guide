@@ -42,12 +42,16 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-     - name: notices.json 커밋 및 푸시
+    - name: notices.json 커밋 및 푸시
   if: steps.changes.outputs.changed == 'true'
   run: |
     git config user.name "github-actions[bot]"
     git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
     git add notices.json
     git commit -m "자동 공지 업데이트" || echo "커밋할 변경 없음"
-    git pull --rebase origin main
+    git pull --rebase origin main || {
+      echo "rebase 실패"
+      git rebase --abort || true
+      exit 1
+    }
     git push origin main
