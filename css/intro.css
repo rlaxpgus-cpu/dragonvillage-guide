@@ -13,7 +13,7 @@
 /* 헤더를 어둡게 덮기 */
 .intro-page .header {
   background: rgba(0, 0, 0, 0.6);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255, 0, 0, 0.1);
   backdrop-filter: blur(6px);
 }
 
