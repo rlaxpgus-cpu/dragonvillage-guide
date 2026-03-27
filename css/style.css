@@ -9,16 +9,16 @@
 }
 
 :root {
-  --bg: #0b0b0b;
-  --surface: #111111;
-  --surface-2: #181818;
-  --surface-3: #101010;
-  --text: #ffffff;
-  --muted: rgba(255, 255, 255, 0.78);
-  --muted-soft: rgba(255, 255, 255, 0.65);
-  --border: rgba(255, 255, 255, 0.1);
-  --border-strong: #2d2d2d;
-  --white: #ffffff;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #ffffff;
+  --surface-3: #ffffff;
+  --text: #111111;
+  --muted: rgba(0, 0, 0, 0.7);
+  --muted-soft: rgba(0, 0, 0, 0.55);
+  --border: rgba(0, 0, 0, 0.1);
+  --border-strong: #e0e0e0;
+  --white: #111111;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
@@ -55,9 +55,7 @@ ol {
 #start,
 #tips,
 #dictionary,
-#system,
-#obtain,
-#update {
+#system {
   scroll-margin-top: 100px;
 }
 
@@ -142,10 +140,10 @@ ol {
    3. 히어로 영역
 ========================= */
 body {
-  color: #ffffff;
+  color: #111111;
   background: linear-gradient(
     to top,
-    #918e8e 0%,
+    #eaeaea 0%,
     #ffffff 100%
   );
 }
@@ -153,11 +151,11 @@ body {
 .hero {
   padding-top: 80px;
    padding-bottom: 50px;
-      color: #ffffff;
+      color: #000000;
   background: linear-gradient(
     to top,
 
-    #585858 100%
+    (55, 200, 0, 0.15) 100%
     );
 }
 
@@ -222,15 +220,11 @@ body {
 }
 
 .section h2 {
-  font-size: 1.9rem;
-  margin-bottom: 14px;
-  letter-spacing: -0.02em;
-  color: #ffffff;
+  color: #000000;
 }
 
 .section p {
-  color: rgb(255, 255, 255);
-  margin-bottom: 20px;
+  color: #000000;
 }
 
 /* =========================
@@ -544,7 +538,7 @@ th {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #ffffff;
+  background: #03030369;
   border: none;
   cursor: pointer;
 }
@@ -552,7 +546,7 @@ th {
 .notice-dots .dot.active {
   width: 28px;
   border-radius: 999px;
-  background: #ffffff;
+  background: #000000;
 }
 
 .notice-caption {
@@ -670,7 +664,7 @@ th {
     
 
     .intro-page {
-   background: #9a9a9a;
+   background: #ffffff;
   min-height: 100vh;
 }
 
@@ -834,8 +828,9 @@ th {
    HOME PAGE 전용 (index)
 ========================= */
 
+
 .home-page {
- background: #9a9a9a;
+ background: #ffffff;
   min-height: 100vh;
 }
 

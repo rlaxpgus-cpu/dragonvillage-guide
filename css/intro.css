@@ -3,27 +3,25 @@
 ========================= */
 
 .intro-page {
-  background: linear-gradient(
-    to bottom,
-    #adadad 0%,
-    #000000 100%
-  );
+  background: #f3f3f3;
+  min-height: 100vh;
+  color: #111111;
 }
 
-/* 헤더를 어둡게 덮기 */
+/* 헤더 */
 .intro-page .header {
-  background: rgba(0, 0, 0, 0.6);
-  border-bottom: 1px solid rgba(255, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.72);
+  border-bottom: 1px solid rgba(255, 200, 0, 0.15);
   backdrop-filter: blur(6px);
 }
 
 .intro-page .site-title,
 .intro-page .nav a {
-  color: #fff;
+  color: #ffffff;
 }
 
 /* =========================
-   1. 히어로 (첫 화면)
+   히어로
 ========================= */
 
 .intro-hero {
@@ -39,114 +37,273 @@
   object-fit: cover;
 }
 
-/* 어둡게 덮는 레이어 */
 .intro-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.55) 28%,
+    rgba(0, 0, 0, 0.18) 58%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
 }
 
-/* 텍스트 */
 .intro-hero-text {
   position: absolute;
   left: 8%;
-  bottom: 20%;
+  bottom: 18%;
   z-index: 2;
-  max-width: 600px;
+  max-width: 620px;
 }
 
 .intro-label {
   font-size: 0.9rem;
-  letter-spacing: 0.15em;
-  color: rgba(255,255,255,0.7);
-  margin-bottom: 12px;
-}
-
-.intro-hero-text h2 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  line-height: 1.1;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.72);
   margin-bottom: 14px;
 }
 
+.intro-hero-text h2 {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 1.05;
+  margin-bottom: 18px;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
 .intro-hero-text p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.9);
-}
-
-/* =========================
-   2. 쇼케이스 (공통)
-========================= */
-
-.intro-showcase {
-  padding: 120px 0;
-  text-align: center;
-}
-
-/* 이미지 (3/2 느낌) */
-.showcase-image-wrap {
-  width: min(1100px, 92%);
-  margin: 0 auto;
-}
-
-.showcase-image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-/* 텍스트 */
-.showcase-text {
-  width: min(700px, 90%);
-  margin: 30px auto 0;
-}
-
-.showcase-text h3 {
-  font-size: 2rem;
-  margin-bottom: 12px;
-}
-
-.showcase-text p {
-  font-size: 1rem;
+  font-size: 1.12rem;
   line-height: 1.8;
-  color: rgba(255,255,255,0.85);
+  color: #ffd84d;
+  font-weight: 600;
 }
 
 /* =========================
-   3. 섹션 간 여백
+   본문 영역
 ========================= */
 
-.intro-showcase + .intro-showcase {
-  margin-top: 40px;
+#start.section {
+  width: min(960px, 92%);
+  margin: 0 auto;
+  padding: 90px 0 100px;
+}
+
+/* 큰 제목 */
+#start h2 {
+  font-size: 2rem;
+  margin-bottom: 26px;
+  letter-spacing: -0.02em;
+  color: #111111;
+  font-weight: 800;
+}
+
+/* 요약 박스 */
+.summary-box {
+  background: #ffffff;
+  padding: 28px 30px;
+  border-radius: 20px;
+  margin-bottom: 26px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+.summary-box h3 {
+  font-size: 1.28rem;
+  margin-bottom: 14px;
+  color: #111111;
+  font-weight: 800;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(255, 200, 0, 0.5);
+}
+
+.summary-box ul {
+  margin-top: 12px;
+  margin-bottom: 0;
+  padding-left: 22px;
+  list-style: disc;
+}
+
+.summary-box li {
+  margin-bottom: 10px;
+  color: #222222;
+  line-height: 1.85;
+}
+
+/* 본문 카드 */
+.guide-content {
+  background: #ffffff;
+  color: #111111;
+  padding: 34px 32px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* 대제목 */
+.guide-content h3 {
+  font-size: 1.5rem;
+  margin-top: 44px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  color: #111111;
+  border-bottom: 2px solid rgba(255, 200, 0, 0.55);
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+.guide-content h3:first-child {
+  margin-top: 0;
+}
+
+/* 소제목 */
+.guide-content h4 {
+  font-size: 1.12rem;
+  margin-top: 26px;
+  margin-bottom: 10px;
+  color: #111111;
+  font-weight: 800;
+}
+
+/* 문단 */
+.guide-content p {
+  color: #222222;
+  margin-bottom: 18px;
+  line-height: 1.95;
+  word-break: keep-all;
+  font-size: 1rem;
+}
+
+/* 리스트 */
+.guide-content ul,
+.guide-content ol {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  padding-left: 22px;
+  list-style-position: outside;
+}
+
+.guide-content ul {
+  list-style: disc;
+}
+
+.guide-content ol {
+  list-style: decimal;
+}
+
+.guide-content li {
+  color: #222222;
+  margin-bottom: 10px;
+  line-height: 1.85;
+}
+
+/* 강조 */
+.guide-content strong,
+.summary-box strong {
+  color: #d8a400;
+  font-weight: 800;
+}
+
+/* 등급 줄 */
+.guide-content .rank-line {
+  display: block;
+  padding: 16px 18px;
+  margin-bottom: 18px;
+  background: #fff8dc;
+  border-left: 4px solid #ffc800;
+  border-radius: 12px;
+  color: #111111;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+/* 참고 / 팁 박스 */
+.guide-content .mini-box {
+  background: #fff8dc;
+  border-left: 4px solid #ffc800;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 18px 0 22px;
+}
+
+.guide-content .mini-box p:last-child,
+.guide-content .mini-box ul:last-child,
+.guide-content .mini-box ol:last-child {
+  margin-bottom: 0;
 }
 
 /* =========================
-   4. 반응형
+   반응형
 ========================= */
 
 @media (max-width: 900px) {
-
   .intro-hero {
-    height: 90vh;
+    height: 88vh;
   }
 
   .intro-hero-text {
     left: 6%;
     right: 6%;
     bottom: 10%;
+    max-width: none;
   }
 
-  .intro-showcase {
-    padding: 80px 0;
+  .intro-label {
+    font-size: 0.82rem;
+    margin-bottom: 10px;
   }
 
-  .showcase-text {
-    margin-top: 20px;
+  .intro-hero-text h2 {
+    font-size: clamp(2.1rem, 9vw, 3.4rem);
+    line-height: 1.08;
+    margin-bottom: 14px;
   }
 
-  .showcase-text p {
-    font-size: 0.95rem;
+  .intro-hero-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  #start.section {
+    width: min(94%, 720px);
+    padding: 70px 0 80px;
+  }
+
+  #start h2 {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+  }
+
+  .summary-box,
+  .guide-content {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+
+  .summary-box h3,
+  .guide-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .guide-content h3 {
+    margin-top: 32px;
+  }
+
+  .guide-content h4 {
+    font-size: 1rem;
+  }
+
+  .guide-content p,
+  .guide-content li,
+  .summary-box li {
+    font-size: 0.97rem;
+    line-height: 1.85;
+  }
+
+  .guide-content .rank-line,
+  .guide-content .mini-box {
+    padding: 14px 14px;
+    border-radius: 10px;
   }
 }
-<body class="intro-page">
