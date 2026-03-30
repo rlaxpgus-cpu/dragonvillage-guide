@@ -1,6 +1,20 @@
 {
-  "updatedAt": "2026-03-29T11:06:24.653Z",
+  "updatedAt": "2026-03-30T07:14:09.753Z",
   "items": [
+    {
+      "title": "[안내] 이달의 알 뇨르드 교배 외형 확률 정보",
+      "link": "https://community.withhive.com/dvc/ko/board/5/310372",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/25/20260325_203608_uXixN4DgwG.png"
+    },
+    {
+      "title": "[이벤트] 만우절 이벤트 3종 안내 (내용 수정)",
+      "link": "https://community.withhive.com/dvc/ko/board/20/310336",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/25/20260325_164239_MOOr7EiMgX.png"
+    },
     {
       "title": "[이벤트] 봄의 축제 이벤트 안내",
       "link": "https://community.withhive.com/dvc/ko/board/20/309997",
@@ -16,25 +30,11 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/04/20260304_115102_54coymDsiA.png"
     },
     {
-      "title": "[안내] 2026년 3월. 이달의 알 [오딘]",
-      "link": "https://community.withhive.com/dvc/ko/board/5/308728",
+      "title": "[공지] 2026년 4월. 이달의 알 [뇨르드]",
+      "link": "https://community.withhive.com/dvc/ko/board/5/310356",
       "date": "",
       "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/02/23/20260223_150532_VlRADk3TbJ.png"
-    },
-    {
-      "title": "[이벤트] 만우절 이벤트 3종 안내 (내용 수정)",
-      "link": "https://community.withhive.com/dvc/ko/board/20/310336",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/25/20260325_164239_MOOr7EiMgX.png"
-    },
-    {
-      "title": "[안내] 3월 26일(목) 라이브 패치 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/5/310443",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/26/20260326_194150_2qaOd1aMm7.png"
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/25/20260325_203011_5cDbvVL8m2.png"
     }
   ]
 }
