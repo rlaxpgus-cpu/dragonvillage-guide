@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-03-31T10:37:34.537Z",
+  "updatedAt": "2026-04-01T06:20:37.096Z",
   "items": [
+    {
+      "title": "[공지] 2026년 4월. 이달의 알 [뇨르드]",
+      "link": "https://community.withhive.com/dvc/ko/board/5/310356",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/25/20260325_203011_5cDbvVL8m2.png"
+    },
     {
       "title": "[안내] 이달의 알 뇨르드 교배 외형 확률 정보",
       "link": "https://community.withhive.com/dvc/ko/board/5/310372",
@@ -16,25 +23,18 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/25/20260325_164239_MOOr7EiMgX.png"
     },
     {
-      "title": "[이벤트] 봄의 축제 이벤트 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/20/309997",
+      "title": "[안내] 3월 30일(월) 라이브 패치 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/310569",
       "date": "",
       "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/18/20260318_114645_zVsqqtukbh.png"
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/30/20260330_125800_SOsTFumhwQ.png"
     },
     {
-      "title": "[이벤트] 제 12회 자작룡 이벤트 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/20/309166",
+      "title": "[안내] 3월 26일(목) 라이브 패치 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/310443",
       "date": "",
       "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/04/20260304_115102_54coymDsiA.png"
-    },
-    {
-      "title": "[공지] 2026년 4월. 이달의 알 [뇨르드]",
-      "link": "https://community.withhive.com/dvc/ko/board/5/310356",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/25/20260325_203011_5cDbvVL8m2.png"
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/26/20260326_194150_2qaOd1aMm7.png"
     }
   ]
 }
