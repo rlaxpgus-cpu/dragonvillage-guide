@@ -1,20 +1,6 @@
 {
-  "updatedAt": "2026-04-12T11:51:33.215Z",
+  "updatedAt": "2026-04-13T07:31:17.643Z",
   "items": [
-    {
-      "title": "[공지] 2026년 4월. 이달의 알 [뇨르드]",
-      "link": "https://community.withhive.com/dvc/ko/board/5/310356",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/25/20260325_203011_5cDbvVL8m2.png"
-    },
-    {
-      "title": "[안내] 이달의 알 뇨르드 교배 외형 확률 정보",
-      "link": "https://community.withhive.com/dvc/ko/board/5/310372",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/25/20260325_203608_uXixN4DgwG.png"
-    },
     {
       "title": "[이벤트] 미미르 랜드마크 인증 이벤트 안내",
       "link": "https://community.withhive.com/dvc/ko/board/20/310993",
@@ -28,6 +14,20 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/07/20260407_162859_x6Szk24RTU.png"
+    },
+    {
+      "title": "[공지] 2026년 4월. 이달의 알 [뇨르드]",
+      "link": "https://community.withhive.com/dvc/ko/board/5/310356",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/25/20260325_203011_5cDbvVL8m2.png"
+    },
+    {
+      "title": "[안내] 이달의 알 뇨르드 교배 외형 확률 정보",
+      "link": "https://community.withhive.com/dvc/ko/board/5/310372",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/25/20260325_203608_uXixN4DgwG.png"
     },
     {
       "title": "[안내] 매크로 등 약관/정책 위반 계정 게임 이용제한 안내 [109차]",
