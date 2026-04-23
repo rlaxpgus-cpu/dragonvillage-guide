@@ -1,19 +1,12 @@
 {
-  "updatedAt": "2026-04-22T11:05:53.943Z",
+  "updatedAt": "2026-04-23T04:14:03.510Z",
   "items": [
     {
-      "title": "[이벤트] 미미르 랜드마크 인증 이벤트 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/20/310993",
+      "title": "[공지] 2026년 4월. 미스터리 복권 안내 (추가)",
+      "link": "https://community.withhive.com/dvc/ko/board/5/311168",
       "date": "",
       "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/09/20260409_100324_ndk3DsDHa8.png"
-    },
-    {
-      "title": "[공지] 2026년 4월. 행운의 알 [미미르]",
-      "link": "https://community.withhive.com/dvc/ko/board/5/310951",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/07/20260407_162859_x6Szk24RTU.png"
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/14/20260414_121518_7Zpmgc6gld.png"
     },
     {
       "title": "[공지] 2026년 4월. 이달의 알 [뇨르드]",
@@ -35,6 +28,13 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/22/20260422_162938_SSPdgRJoel.png"
+    },
+    {
+      "title": "[공지] 미스터리 박스 1회차 상위 보상 획득 로그",
+      "link": "https://community.withhive.com/dvc/ko/board/5/311619",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/20230410_192523_7febYTJlpp.png"
     }
   ]
 }
