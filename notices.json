@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-04-26T10:45:24.310Z",
+  "updatedAt": "2026-04-27T04:31:52.025Z",
   "items": [
+    {
+      "title": "[안내] 게임 지연 현상 및 미스터리 복권 관련 안내 (01:55 조치 완료)",
+      "link": "https://community.withhive.com/dvc/ko/board/5/311792",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/22/20260422_162938_SSPdgRJoel.png"
+    },
     {
       "title": "[공지] 2026년 4월. 미스터리 복권 안내 (추가)",
       "link": "https://community.withhive.com/dvc/ko/board/5/311168",
@@ -28,13 +35,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/22/20260422_162938_SSPdgRJoel.png"
-    },
-    {
-      "title": "[공지] 미스터리 박스 1회차 상위 보상 획득 로그",
-      "link": "https://community.withhive.com/dvc/ko/board/5/311619",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/20230410_192523_7febYTJlpp.png"
     }
   ]
 }
