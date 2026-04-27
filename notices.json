@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-27T04:31:52.025Z",
+  "updatedAt": "2026-04-27T09:18:20.612Z",
   "items": [
     {
       "title": "[안내] 게임 지연 현상 및 미스터리 복권 관련 안내 (01:55 조치 완료)",
@@ -23,18 +23,18 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/25/20260325_203011_5cDbvVL8m2.png"
     },
     {
-      "title": "[안내] 이달의 알 뇨르드 교배 외형 확률 정보",
-      "link": "https://community.withhive.com/dvc/ko/board/5/310372",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/03/25/20260325_203608_uXixN4DgwG.png"
-    },
-    {
       "title": "[공지] 미스터리 복권 환불 절차 안내",
       "link": "https://community.withhive.com/dvc/ko/board/5/311693",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/22/20260422_162938_SSPdgRJoel.png"
+    },
+    {
+      "title": "[공지] 미스터리 박스 1회차 상위 보상 획득 로그",
+      "link": "https://community.withhive.com/dvc/ko/board/5/311619",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/20230410_192523_7febYTJlpp.png"
     }
   ]
 }
