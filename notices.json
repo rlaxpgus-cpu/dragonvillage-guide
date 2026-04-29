@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-29T09:10:42.187Z",
+  "updatedAt": "2026-04-29T11:29:30.244Z",
   "items": [
     {
       "title": "[공지] 2026년 4월. 미스터리 복권 안내 (추가)",
@@ -7,6 +7,13 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/14/20260414_121518_7Zpmgc6gld.png"
+    },
+    {
+      "title": "[공지] 26.04.29(수) 긴급 점검 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/311937",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_195035_YNHpXbqNP2.png"
     },
     {
       "title": "[공지] 2026년 5월. 이달의 알 [베네]",
@@ -28,13 +35,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/28/20260428_145334_ruUkUGSjSH.png"
-    },
-    {
-      "title": "[안내] 게임 지연 현상 및 미스터리 복권 관련 안내 (01:55 조치 완료)",
-      "link": "https://community.withhive.com/dvc/ko/board/5/311792",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/22/20260422_162938_SSPdgRJoel.png"
     }
   ]
 }
