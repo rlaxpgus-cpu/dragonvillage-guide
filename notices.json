@@ -1,20 +1,6 @@
 {
-  "updatedAt": "2026-04-29T11:29:30.244Z",
+  "updatedAt": "2026-04-30T04:33:24.901Z",
   "items": [
-    {
-      "title": "[공지] 2026년 4월. 미스터리 복권 안내 (추가)",
-      "link": "https://community.withhive.com/dvc/ko/board/5/311168",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/14/20260414_121518_7Zpmgc6gld.png"
-    },
-    {
-      "title": "[공지] 26.04.29(수) 긴급 점검 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/5/311937",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_195035_YNHpXbqNP2.png"
-    },
     {
       "title": "[공지] 2026년 5월. 이달의 알 [베네]",
       "link": "https://community.withhive.com/dvc/ko/board/5/311891",
@@ -23,18 +9,32 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_110937_v8WYEAeaXy.png"
     },
     {
+      "title": "[이벤트] 드래곤빌리지 컬렉션 3주년 이벤트 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/20/311974",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_225330_Ju18bNzebM.png"
+    },
+    {
+      "title": "[안내] 내 마음의 오라 구성 및 확률 정보",
+      "link": "https://community.withhive.com/dvc/ko/board/5/311957",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_221246_eUC1sZodla.png"
+    },
+    {
+      "title": "[공지] 26.04.29(수) 긴급 점검 안내 (완료)",
+      "link": "https://community.withhive.com/dvc/ko/board/5/311937",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_195035_YNHpXbqNP2.png"
+    },
+    {
       "title": "[안내] 이달의 알 베네 교배 외형 확률 정보",
       "link": "https://community.withhive.com/dvc/ko/board/5/311907",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_112505_YimlP6HiLO.png"
-    },
-    {
-      "title": "[공지] 26.04.28(화) 긴급 점검 안내 (완료)",
-      "link": "https://community.withhive.com/dvc/ko/board/5/311845",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/28/20260428_145334_ruUkUGSjSH.png"
     }
   ]
 }
