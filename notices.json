@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-30T04:33:24.901Z",
+  "updatedAt": "2026-04-30T09:11:47.323Z",
   "items": [
     {
       "title": "[공지] 2026년 5월. 이달의 알 [베네]",
@@ -16,6 +16,13 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_225330_Ju18bNzebM.png"
     },
     {
+      "title": "[공지] 04.29 서버 접속 오류 보상 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/312000",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/30/20260430_155438_qvodQqxgwh.png"
+    },
+    {
       "title": "[안내] 내 마음의 오라 구성 및 확률 정보",
       "link": "https://community.withhive.com/dvc/ko/board/5/311957",
       "date": "",
@@ -28,13 +35,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_195035_YNHpXbqNP2.png"
-    },
-    {
-      "title": "[안내] 이달의 알 베네 교배 외형 확률 정보",
-      "link": "https://community.withhive.com/dvc/ko/board/5/311907",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_112505_YimlP6HiLO.png"
     }
   ]
 }
