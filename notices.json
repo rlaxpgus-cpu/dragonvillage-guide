@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-30T11:28:32.320Z",
+  "updatedAt": "2026-05-01T04:51:15.284Z",
   "items": [
     {
       "title": "[공지] 2026년 5월. 이달의 알 [베네]",
@@ -16,25 +16,25 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_225330_Ju18bNzebM.png"
     },
     {
+      "title": "[안내] 5월 1일(금) 라이브 패치 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/312090",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/01/20260501_110058_j9x5BUn8m5.png"
+    },
+    {
+      "title": "[공지] 3주년 인기 드래곤 투표 이벤트 오류 및 임시 점검 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/312045",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/30/20260430_213808_derwMlYynR.png"
+    },
+    {
       "title": "[공지] 04.29 서버 접속 오류 보상 안내",
       "link": "https://community.withhive.com/dvc/ko/board/5/312000",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/30/20260430_155438_qvodQqxgwh.png"
-    },
-    {
-      "title": "[안내] 내 마음의 오라 구성 및 확률 정보",
-      "link": "https://community.withhive.com/dvc/ko/board/5/311957",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_221246_eUC1sZodla.png"
-    },
-    {
-      "title": "[공지] 26.04.29(수) 긴급 점검 안내 (완료)",
-      "link": "https://community.withhive.com/dvc/ko/board/5/311937",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_195035_YNHpXbqNP2.png"
     }
   ]
 }
