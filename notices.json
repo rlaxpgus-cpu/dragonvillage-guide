@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-02T08:22:21.306Z",
+  "updatedAt": "2026-05-02T10:53:18.149Z",
   "items": [
     {
       "title": "[공지] 2026년 5월. 이달의 알 [베네]",
@@ -16,6 +16,13 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_225330_Ju18bNzebM.png"
     },
     {
+      "title": "[공지] 5월 2일(토) 라이브 패치 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/312156",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/02/20260502_170438_7MBwhjSFen.png"
+    },
+    {
       "title": "[안내] 5월 1일(금) 라이브 패치 안내",
       "link": "https://community.withhive.com/dvc/ko/board/5/312090",
       "date": "",
@@ -28,13 +35,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/30/20260430_213808_derwMlYynR.png"
-    },
-    {
-      "title": "[공지] 04.29 서버 접속 오류 보상 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/5/312000",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/30/20260430_155438_qvodQqxgwh.png"
     }
   ]
 }
