@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-03T08:47:39.879Z",
+  "updatedAt": "2026-05-03T10:56:04.711Z",
   "items": [
     {
       "title": "[공지] 2026년 5월. 이달의 알 [베네]",
@@ -16,6 +16,13 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_225330_Ju18bNzebM.png"
     },
     {
+      "title": "[공지] 이벤트 랭킹 오류 및 추가 지급 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/312209",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/03/20260503_191957_EfIz49iCuf.png"
+    },
+    {
       "title": "[공지] 5월 2일(토) 라이브 패치 안내",
       "link": "https://community.withhive.com/dvc/ko/board/5/312156",
       "date": "",
@@ -28,13 +35,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/01/20260501_110058_j9x5BUn8m5.png"
-    },
-    {
-      "title": "[공지] 3주년 인기 드래곤 투표 이벤트 오류 및 임시 점검 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/5/312045",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/30/20260430_213808_derwMlYynR.png"
     }
   ]
 }
