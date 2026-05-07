@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-07T04:35:25.210Z",
+  "updatedAt": "2026-05-07T09:32:45.887Z",
   "items": [
     {
       "title": "[이벤트] 드래곤빌리지 컬렉션 3주년 이벤트 안내",
@@ -16,6 +16,13 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_110937_v8WYEAeaXy.png"
     },
     {
+      "title": "[공지] 유럽 서버 인기투표 오류 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/312311",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/07/20260507_151858_f6awMCk0Jc.png"
+    },
+    {
       "title": "[공지] 이벤트 랭킹 오류 및 추가 지급 안내",
       "link": "https://community.withhive.com/dvc/ko/board/5/312209",
       "date": "",
@@ -28,13 +35,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/02/20260502_170438_7MBwhjSFen.png"
-    },
-    {
-      "title": "[안내] 5월 1일(금) 라이브 패치 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/5/312090",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/01/20260501_110058_j9x5BUn8m5.png"
     }
   ]
 }
