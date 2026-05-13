@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-05-12T11:55:38.354Z",
+  "updatedAt": "2026-05-13T04:45:03.904Z",
   "items": [
+    {
+      "title": "[공지] 2026년 5월 꿈속의 알 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/312418",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/12/20260512_142608_WlxyJwDT5Q.png"
+    },
     {
       "title": "[이벤트] 드래곤빌리지 컬렉션 3주년 이벤트 안내",
       "link": "https://community.withhive.com/dvc/ko/board/20/311974",
@@ -14,13 +21,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_110937_v8WYEAeaXy.png"
-    },
-    {
-      "title": "[공지] 2026년 5월 꿈속의 알 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/5/312418",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/12/20260512_142608_WlxyJwDT5Q.png"
     },
     {
       "title": "[공지] 유럽 서버 인기투표 오류 안내",
