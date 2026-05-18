@@ -1,19 +1,19 @@
 {
-  "updatedAt": "2026-05-17T11:06:58.198Z",
+  "updatedAt": "2026-05-18T05:07:21.068Z",
   "items": [
+    {
+      "title": "[이벤트] 아가 드래곤 랜드마크 인증 이벤트 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/20/312490",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/14/20260514_181952_Wtx4pUE6Ou.png"
+    },
     {
       "title": "[공지] 2026년 5월 꿈속의 알 안내",
       "link": "https://community.withhive.com/dvc/ko/board/5/312418",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/12/20260512_142608_WlxyJwDT5Q.png"
-    },
-    {
-      "title": "[이벤트] 드래곤빌리지 컬렉션 3주년 이벤트 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/20/311974",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_225330_Ju18bNzebM.png"
     },
     {
       "title": "[공지] 2026년 5월. 이달의 알 [베네]",
@@ -23,18 +23,18 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_110937_v8WYEAeaXy.png"
     },
     {
-      "title": "[이벤트] 아가 드래곤 랜드마크 인증 이벤트 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/20/312490",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/14/20260514_181952_Wtx4pUE6Ou.png"
-    },
-    {
       "title": "[안내] 5월 14일(목) 알려진 문제사항 안내 (수정 완료)",
       "link": "https://community.withhive.com/dvc/ko/board/5/312473",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/14/20260514_145413_94ALudmOpD.png"
+    },
+    {
+      "title": "[공지] 유럽 서버 인기투표 오류 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/312311",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/07/20260507_151858_f6awMCk0Jc.png"
     }
   ]
 }
