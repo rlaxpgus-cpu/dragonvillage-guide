@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-21T10:40:39.024Z",
+  "updatedAt": "2026-05-22T05:01:07.901Z",
   "items": [
     {
       "title": "[이벤트] 프리즘 게이트 : 토이아크 안내",
@@ -23,18 +23,18 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_110937_v8WYEAeaXy.png"
     },
     {
+      "title": "[공지] 인기 드래곤 투표 시상식 연기 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/312664",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/22/20260522_101523_y3Bs6uL450.png"
+    },
+    {
       "title": "[안내] 5월 21일(목) 알려진 문제사항 안내 (수정 완료)",
       "link": "https://community.withhive.com/dvc/ko/board/5/312623",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/21/20260521_123737_3JeG4umAKZ.png"
-    },
-    {
-      "title": "[안내] 매크로 등 약관/정책 위반 계정 게임 이용제한 안내 [111차]",
-      "link": "https://community.withhive.com/dvc/ko/board/5/312605",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/20230718_105944_XNiTol2OiF.png"
     }
   ]
 }
