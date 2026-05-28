@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-27T10:56:29.659Z",
+  "updatedAt": "2026-05-28T05:09:48.878Z",
   "items": [
     {
       "title": "[이벤트] 프리즘 게이트 : 토이아크 안내",
@@ -7,13 +7,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/19/20260519_140714_1AmkqDdWmr.png"
-    },
-    {
-      "title": "[공지] 2026년 5월 꿈속의 알 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/5/312418",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/12/20260512_142608_WlxyJwDT5Q.png"
     },
     {
       "title": "[공지] 2026년 5월. 이달의 알 [베네]",
@@ -35,6 +28,13 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/21/20260521_123737_3JeG4umAKZ.png"
+    },
+    {
+      "title": "[안내] 매크로 등 약관/정책 위반 계정 게임 이용제한 안내 [111차]",
+      "link": "https://community.withhive.com/dvc/ko/board/5/312605",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/20230718_105944_XNiTol2OiF.png"
     }
   ]
 }
