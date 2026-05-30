@@ -1,26 +1,19 @@
 {
-  "updatedAt": "2026-05-29T10:46:59.347Z",
+  "updatedAt": "2026-05-30T04:53:56.464Z",
   "items": [
-    {
-      "title": "[이벤트] 프리즘 게이트 : 토이아크 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/20/312579",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/19/20260519_140714_1AmkqDdWmr.png"
-    },
-    {
-      "title": "[공지] 2026년 5월. 이달의 알 [베네]",
-      "link": "https://community.withhive.com/dvc/ko/board/5/311891",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/04/29/20260429_110937_v8WYEAeaXy.png"
-    },
     {
       "title": "[공지] 2026년 6월. 이달의 알 [아란]",
       "link": "https://community.withhive.com/dvc/ko/board/5/312806",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/27/20260527_201502_Scz1nbheUy.png"
+    },
+    {
+      "title": "[이벤트] 프리즘 게이트 : 토이아크 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/20/312579",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/19/20260519_140714_1AmkqDdWmr.png"
     },
     {
       "title": "[안내] 이달의 알 아란 교배 외형 확률 정보",
@@ -35,6 +28,13 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/22/20260522_101523_y3Bs6uL450.png"
+    },
+    {
+      "title": "[안내] 5월 21일(목) 알려진 문제사항 안내 (수정 완료)",
+      "link": "https://community.withhive.com/dvc/ko/board/5/312623",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/21/20260521_123737_3JeG4umAKZ.png"
     }
   ]
 }
