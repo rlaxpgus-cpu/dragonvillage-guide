@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-06-10T10:56:26.846Z",
+  "updatedAt": "2026-06-11T05:29:23.098Z",
   "items": [
+    {
+      "title": "[이벤트] 이터널 다크 이벤트 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/20/313439",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/10/20260610_143211_SkmJbpJzkN.png"
+    },
     {
       "title": "[이벤트] 제 13회 자작룡 이벤트 안내",
       "link": "https://community.withhive.com/dvc/ko/board/20/313080",
@@ -16,18 +23,18 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/27/20260527_201502_Scz1nbheUy.png"
     },
     {
-      "title": "[이벤트] 프리즘 게이트 : 토이아크 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/20/312579",
+      "title": "[안내] 매크로 등 약관/정책 위반 계정 게임 이용제한 안내 [112차]",
+      "link": "https://community.withhive.com/dvc/ko/board/5/313399",
       "date": "",
       "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/19/20260519_140714_1AmkqDdWmr.png"
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/09/20260609_165656_Mh3oV8YJpM.png"
     },
     {
-      "title": "[이벤트] 이터널 다크 이벤트 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/20/313439",
+      "title": "[안내] 이달의 알 아란 교배 외형 확률 정보",
+      "link": "https://community.withhive.com/dvc/ko/board/5/312822",
       "date": "",
       "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/10/20260610_143211_SkmJbpJzkN.png"
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/27/20260527_202045_f7iZATKp9Q.png"
     }
   ]
 }
