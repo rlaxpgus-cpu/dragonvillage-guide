@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-06-15T13:13:50.650Z",
+  "updatedAt": "2026-06-16T06:34:35.150Z",
   "items": [
+    {
+      "title": "[공지] 2026년 6월. 행운의 알 [바나]",
+      "link": "https://community.withhive.com/dvc/ko/board/5/313597",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/16/20260616_122839_JF9NQWIqj1.png"
+    },
     {
       "title": "[이벤트] 제 13회 자작룡 이벤트 안내",
       "link": "https://community.withhive.com/dvc/ko/board/20/313080",
@@ -28,13 +35,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/27/20260527_202045_f7iZATKp9Q.png"
-    },
-    {
-      "title": "[공지] 인기 드래곤 투표 시상식 연기 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/5/312664",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/22/20260522_101523_y3Bs6uL450.png"
     }
   ]
 }
