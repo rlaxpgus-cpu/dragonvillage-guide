@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T11:49:20.337Z",
+  "updatedAt": "2026-06-29T05:51:09.301Z",
   "items": [
     {
       "title": "[공지] 2026년 6월. 행운의 알 [바나]",
@@ -16,13 +16,6 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/04/20260604_095858_HAfhTtg1pe.png"
     },
     {
-      "title": "[공지] 2026년 6월. 이달의 알 [아란]",
-      "link": "https://community.withhive.com/dvc/ko/board/5/312806",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/27/20260527_201502_Scz1nbheUy.png"
-    },
-    {
       "title": "[안내] 매크로 등 약관/정책 위반 계정 게임 이용제한 안내 [112차]",
       "link": "https://community.withhive.com/dvc/ko/board/5/313399",
       "date": "",
@@ -35,6 +28,13 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/27/20260527_202045_f7iZATKp9Q.png"
+    },
+    {
+      "title": "[공지] 2026년 6월. 이달의 알 [아란]",
+      "link": "https://community.withhive.com/dvc/ko/board/5/312806",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/27/20260527_201502_Scz1nbheUy.png"
     }
   ]
 }
