@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T10:32:39.519Z",
+  "updatedAt": "2026-07-01T05:22:15.570Z",
   "items": [
     {
       "title": "[공지] 2026년 7월. 이달의 알 [마코아]",
@@ -9,20 +9,6 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/26/20260626_125510_hxpbefdFOh.png"
     },
     {
-      "title": "[공지] 2026년 6월. 행운의 알 [바나]",
-      "link": "https://community.withhive.com/dvc/ko/board/5/313597",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/16/20260616_122839_JF9NQWIqj1.png"
-    },
-    {
-      "title": "[이벤트] 제 13회 자작룡 이벤트 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/20/313080",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/04/20260604_095858_HAfhTtg1pe.png"
-    },
-    {
       "title": "[안내] 이달의 알 마코아 교배 외형 확률 정보",
       "link": "https://community.withhive.com/dvc/ko/board/5/313782",
       "date": "",
@@ -30,11 +16,25 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/23/20260623_222310_gWL5Vyh3v9.png"
     },
     {
+      "title": "[공지] 2026년 6월. 행운의 알 [바나]",
+      "link": "https://community.withhive.com/dvc/ko/board/5/313597",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/16/20260616_122839_JF9NQWIqj1.png"
+    },
+    {
       "title": "[안내] 매크로 등 약관/정책 위반 계정 게임 이용제한 안내 [112차]",
       "link": "https://community.withhive.com/dvc/ko/board/5/313399",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/09/20260609_165656_Mh3oV8YJpM.png"
+    },
+    {
+      "title": "[안내] 이달의 알 아란 교배 외형 확률 정보",
+      "link": "https://community.withhive.com/dvc/ko/board/5/312822",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/27/20260527_202045_f7iZATKp9Q.png"
     }
   ]
 }
