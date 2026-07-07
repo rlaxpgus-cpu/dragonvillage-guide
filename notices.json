@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-07-07T04:53:08.502Z",
+  "updatedAt": "2026-07-07T10:26:36.283Z",
   "items": [
+    {
+      "title": "[공지] 2026년 7월, 미스터리 복권 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/314172",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/07/20260707_151029_iSWn2kszN0.png"
+    },
     {
       "title": "[공지] 2026년 7월. 이달의 알 [마코아]",
       "link": "https://community.withhive.com/dvc/ko/board/5/313798",
@@ -28,13 +35,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/09/20260609_165656_Mh3oV8YJpM.png"
-    },
-    {
-      "title": "[안내] 이달의 알 아란 교배 외형 확률 정보",
-      "link": "https://community.withhive.com/dvc/ko/board/5/312822",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/05/27/20260527_202045_f7iZATKp9Q.png"
     }
   ]
 }
