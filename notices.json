@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T09:26:16.755Z",
+  "updatedAt": "2026-07-08T11:47:21.623Z",
   "items": [
     {
       "title": "[공지] 2026년 7월, 미스터리 복권 안내",
@@ -16,6 +16,13 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/26/20260626_125510_hxpbefdFOh.png"
     },
     {
+      "title": "[안내] 7월 8일(수) 알려진 문제사항 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/314236",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/08/20260708_190720_h3i38gbbtp.png"
+    },
+    {
       "title": "[안내] 이달의 알 마코아 교배 외형 확률 정보",
       "link": "https://community.withhive.com/dvc/ko/board/5/313782",
       "date": "",
@@ -28,13 +35,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/16/20260616_122839_JF9NQWIqj1.png"
-    },
-    {
-      "title": "[안내] 매크로 등 약관/정책 위반 계정 게임 이용제한 안내 [112차]",
-      "link": "https://community.withhive.com/dvc/ko/board/5/313399",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/09/20260609_165656_Mh3oV8YJpM.png"
     }
   ]
 }
