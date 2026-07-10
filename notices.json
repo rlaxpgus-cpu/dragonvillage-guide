@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T10:25:35.901Z",
+  "updatedAt": "2026-07-10T04:52:24.117Z",
   "items": [
     {
       "title": "[공지] 2026년 7월, 미스터리 복권 안내",
@@ -16,6 +16,13 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/26/20260626_125510_hxpbefdFOh.png"
     },
     {
+      "title": "[안내] 미스터리 복권 이용 장애 현상에 대한 조치 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/314325",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/09/20260709_193659_1Vy4N0RAP8.png"
+    },
+    {
       "title": "[안내] 7월 9일(목) 알려진 문제사항 안내 (완료)",
       "link": "https://community.withhive.com/dvc/ko/board/5/314299",
       "date": "",
@@ -28,13 +35,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/09/20260709_080140_lLhxaUTQ2f.png"
-    },
-    {
-      "title": "[안내] 7월 8일 오류 수정 및 조치 예정 사항 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/5/314257",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/08/20260708_223859_HuObQjv0Jl.png"
     }
   ]
 }
