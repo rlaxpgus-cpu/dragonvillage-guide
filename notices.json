@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T10:10:25.953Z",
+  "updatedAt": "2026-07-21T04:16:03.320Z",
   "items": [
     {
       "title": "[이벤트] 드래곤빌리지 - 제2회 드래곤 그리기 공모전 안내",
@@ -23,18 +23,18 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/06/26/20260626_125510_hxpbefdFOh.png"
     },
     {
+      "title": "[공지] 2026년 7월 꿈속의 알 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/314753",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/21/20260721_123316_BeTyVkCEvL.png"
+    },
+    {
       "title": "[안내] 미스터리 복권 기간 연장 안내",
       "link": "https://community.withhive.com/dvc/ko/board/5/314545",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/15/20260715_102411_0WXbUkMGU3.png"
-    },
-    {
-      "title": "[공지] 7월 12일(일) 알려진 문제사항 안내 (오류 수정 완료)",
-      "link": "https://community.withhive.com/dvc/ko/board/5/314424",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/12/20260712_135149_7erHqUuI6S.png"
     }
   ]
 }
