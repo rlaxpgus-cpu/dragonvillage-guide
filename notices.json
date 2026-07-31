@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-07-30T11:51:34.677Z",
+  "updatedAt": "2026-07-31T04:22:45.342Z",
   "items": [
+    {
+      "title": "[공지] 2026년 8월. 이달의 알 [시리우스]",
+      "link": "https://community.withhive.com/dvc/ko/board/5/315000",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/28/20260728_223504_a02qj3LqKU.png"
+    },
     {
       "title": "[이벤트] 셀오라 랜드마크 인증 이벤트 안내",
       "link": "https://community.withhive.com/dvc/ko/board/20/314785",
@@ -16,25 +23,18 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/21/20260721_123316_BeTyVkCEvL.png"
     },
     {
-      "title": "[이벤트] 드래곤빌리지 - 제2회 드래곤 그리기 공모전 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/20/314617",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/16/20260716_162755_w1bOTs0JjW.png"
-    },
-    {
-      "title": "[공지] 2026년 8월. 이달의 알 [시리우스]",
-      "link": "https://community.withhive.com/dvc/ko/board/5/315000",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/28/20260728_223504_a02qj3LqKU.png"
-    },
-    {
       "title": "[안내] 이달의 알 시리우스 교배 외형 확률 정보",
       "link": "https://community.withhive.com/dvc/ko/board/5/315017",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/28/20260728_224022_huSTWCdW2S.png"
+    },
+    {
+      "title": "[공지] 돌보기 오류 수정 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/315057",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/29/20260729_190001_1uWb5KzSfk.png"
     }
   ]
 }
