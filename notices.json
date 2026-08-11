@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-11T05:08:13.911Z",
+  "updatedAt": "2026-08-11T08:10:02.641Z",
   "items": [
     {
       "title": "[공지] 드래곤빌리지3 100일 기념 POP-UP 안내",
@@ -23,18 +23,18 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/28/20260728_223504_a02qj3LqKU.png"
     },
     {
+      "title": "[공지] 드래곤빌리지3 100일 기념 팝업 정보 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/25/315460",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/11/20260811_154848_ngj4yGk2xP.png"
+    },
+    {
       "title": "[안내] 이달의 알 시리우스 교배 외형 확률 정보",
       "link": "https://community.withhive.com/dvc/ko/board/5/315017",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/28/20260728_224022_huSTWCdW2S.png"
-    },
-    {
-      "title": "[공지] 돌보기 오류 수정 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/5/315057",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/29/20260729_190001_1uWb5KzSfk.png"
     }
   ]
 }
