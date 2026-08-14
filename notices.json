@@ -1,19 +1,19 @@
 {
-  "updatedAt": "2026-08-13T11:01:01.204Z",
+  "updatedAt": "2026-08-14T03:24:53.868Z",
   "items": [
+    {
+      "title": "[공지] 드래곤빌리지3 100일 기념 팝업 정보 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/25/315460",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/11/20260811_154848_ngj4yGk2xP.png"
+    },
     {
       "title": "[공지] 드래곤빌리지3 100일 기념 POP-UP 안내",
       "link": "https://community.withhive.com/dvc/ko/board/25/315327",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/07/20260807_170513_w40ji9lOWu.png"
-    },
-    {
-      "title": "[안내] 드래곤빌리지3 100일 기념 팝업스토어 Coming Soon!",
-      "link": "https://community.withhive.com/dvc/ko/board/25/315160",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/31/20260731_192759_9ZKCmjEG3N.png"
     },
     {
       "title": "[공지] 2026년 8월. 이달의 알 [시리우스]",
@@ -23,18 +23,18 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/28/20260728_223504_a02qj3LqKU.png"
     },
     {
-      "title": "[공지] 드래곤빌리지3 100일 기념 팝업 정보 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/25/315460",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/11/20260811_154848_ngj4yGk2xP.png"
-    },
-    {
       "title": "[안내] 이달의 알 시리우스 교배 외형 확률 정보",
       "link": "https://community.withhive.com/dvc/ko/board/5/315017",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/28/20260728_224022_huSTWCdW2S.png"
+    },
+    {
+      "title": "[공지] 돌보기 오류 수정 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/315057",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/29/20260729_190001_1uWb5KzSfk.png"
     }
   ]
 }
