@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-08-18T07:37:41.568Z",
+  "updatedAt": "2026-08-18T10:28:15.254Z",
   "items": [
+    {
+      "title": "[이벤트] 프리즘 게이트 : 우주의 파괴 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/20/315625",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/18/20260818_164729_3jDckdCWjs.png"
+    },
     {
       "title": "[공지] 2026년 8월. 이달의 알 [시리우스]",
       "link": "https://community.withhive.com/dvc/ko/board/5/315000",
@@ -28,13 +35,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/22/20260722_145810_WCnsCvMV0F.png"
-    },
-    {
-      "title": "[공지] 2026년 7월 꿈속의 알 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/5/314753",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/21/20260721_123316_BeTyVkCEvL.png"
     }
   ]
 }
