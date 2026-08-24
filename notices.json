@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-08-24T07:58:24.773Z",
+  "updatedAt": "2026-08-24T10:37:07.131Z",
   "items": [
+    {
+      "title": "[안내] 드래곤빌리지3 100일 기념 팝업에 함께해 주셔서 감사합니다.",
+      "link": "https://community.withhive.com/dvc/ko/board/5/315854",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/24/20260824_174618_9vPVvP4MHh.png"
+    },
     {
       "title": "[이벤트] 프리즘 게이트 : 우주의 파괴 안내",
       "link": "https://community.withhive.com/dvc/ko/board/20/315625",
@@ -28,13 +35,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/28/20260728_224022_huSTWCdW2S.png"
-    },
-    {
-      "title": "[공지] 돌보기 오류 수정 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/5/315057",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/29/20260729_190001_1uWb5KzSfk.png"
     }
   ]
 }
