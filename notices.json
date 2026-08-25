@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-25T04:38:37.966Z",
+  "updatedAt": "2026-08-25T07:43:37.958Z",
   "items": [
     {
       "title": "[안내] 드래곤빌리지3 100일 기념 팝업에 함께해 주셔서 감사합니다.",
@@ -23,18 +23,18 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/28/20260728_223504_a02qj3LqKU.png"
     },
     {
+      "title": "[공지] 2026년 8월 꿈속의 알 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/315899",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/25/20260825_162628_hlPDgWY36d.png"
+    },
+    {
       "title": "[공지] 프리즘 게이트 오류 및 조치 안내",
       "link": "https://community.withhive.com/dvc/ko/board/5/315674",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/19/20260819_145126_qfr8SBjxAh.png"
-    },
-    {
-      "title": "[안내] 이달의 알 시리우스 교배 외형 확률 정보",
-      "link": "https://community.withhive.com/dvc/ko/board/5/315017",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/28/20260728_224022_huSTWCdW2S.png"
     }
   ]
 }
