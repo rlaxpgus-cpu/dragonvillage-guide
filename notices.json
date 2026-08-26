@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-25T10:32:14.516Z",
+  "updatedAt": "2026-08-26T02:25:10.469Z",
   "items": [
     {
       "title": "[안내] 드래곤빌리지3 100일 기념 팝업에 함께해 주셔서 감사합니다.",
@@ -23,18 +23,18 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/28/20260728_223504_a02qj3LqKU.png"
     },
     {
+      "title": "[이벤트] 플렘버 랜드마크 인증 이벤트 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/20/315962",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/26/20260826_095609_GQsYQJeZPT.png"
+    },
+    {
       "title": "[공지] 2026년 8월 꿈속의 알 안내",
       "link": "https://community.withhive.com/dvc/ko/board/5/315899",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/25/20260825_162628_hlPDgWY36d.png"
-    },
-    {
-      "title": "[공지] 프리즘 게이트 오류 및 조치 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/5/315674",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/19/20260819_145126_qfr8SBjxAh.png"
     }
   ]
 }
