@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-08-29T14:57:37.105Z",
+  "updatedAt": "2026-08-30T06:17:18.728Z",
   "items": [
+    {
+      "title": "[공지] 2026년 8월 꿈속의 알 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/315899",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/25/20260825_162628_hlPDgWY36d.png"
+    },
     {
       "title": "[안내] 드래곤빌리지3 100일 기념 팝업에 함께해 주셔서 감사합니다.",
       "link": "https://community.withhive.com/dvc/ko/board/5/315854",
@@ -16,11 +23,11 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/18/20260818_164729_3jDckdCWjs.png"
     },
     {
-      "title": "[공지] 2026년 8월. 이달의 알 [시리우스]",
-      "link": "https://community.withhive.com/dvc/ko/board/5/315000",
+      "title": "[공지] 2026년 9월. 이달의 알 [루나크라드]",
+      "link": "https://community.withhive.com/dvc/ko/board/5/315922",
       "date": "",
       "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/07/28/20260728_223504_a02qj3LqKU.png"
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/25/20260825_210259_00BoBMcTkb.png"
     },
     {
       "title": "[공지] 드래곤빌리지 피규어 <셀오라> 판매 안내",
@@ -28,13 +35,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/28/20260828_164945_zH8uCQjCfz.png"
-    },
-    {
-      "title": "[이벤트] 플렘버 랜드마크 인증 이벤트 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/20/315962",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/26/20260826_095609_GQsYQJeZPT.png"
     }
   ]
 }
