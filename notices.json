@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-29T13:46:26.249Z",
+  "updatedAt": "2026-09-30T06:19:31.889Z",
   "items": [
     {
       "title": "[이벤트] 제 14회 자작룡 이벤트 안내",
@@ -7,13 +7,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/09/01/20260901_144226_UvQttKxodI.png"
-    },
-    {
-      "title": "[공지] 2026년 9월. 이달의 알 [루나크라드]",
-      "link": "https://community.withhive.com/dvc/ko/board/5/315922",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/08/25/20260825_210259_00BoBMcTkb.png"
     },
     {
       "title": "[이벤트] 내 마음의 오라 이벤트 안내",
@@ -35,6 +28,13 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/09/16/20260916_094135_wtOZOny9Xd.png"
+    },
+    {
+      "title": "[안내] 9월 22일(화) 라이브 패치 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/317126",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/09/22/20260922_192858_V0xvHNjmcC.png"
     }
   ]
 }
