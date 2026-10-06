@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-06T07:13:48.975Z",
+  "updatedAt": "2026-10-06T16:31:56.108Z",
   "items": [
     {
       "title": "[이벤트] 내 마음의 오라 이벤트 안내",
@@ -9,18 +9,18 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/09/29/20260929_171254_bc11O1V6nm.png"
     },
     {
-      "title": "[공지] 2026년 10월. 이달의 알 [일루이드]",
-      "link": "https://community.withhive.com/dvc/ko/board/5/316817",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/09/16/20260916_094021_2AOFrRjSnf.png"
-    },
-    {
       "title": "[안내] 이달의 알 일루이드 교배 외형 확률 정보",
       "link": "https://community.withhive.com/dvc/ko/board/5/316833",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/09/16/20260916_094135_wtOZOny9Xd.png"
+    },
+    {
+      "title": "[공지] 2026년 10월. 이달의 알 [일루이드]",
+      "link": "https://community.withhive.com/dvc/ko/board/5/316817",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/09/16/20260916_094021_2AOFrRjSnf.png"
     },
     {
       "title": "[안내] 9월 22일(화) 라이브 패치 안내",
