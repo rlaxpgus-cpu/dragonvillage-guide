@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T16:41:26.937Z",
+  "updatedAt": "2026-10-13T07:24:26.896Z",
   "items": [
     {
       "title": "[이벤트] 내 마음의 오라 이벤트 안내",
@@ -7,6 +7,13 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/09/29/20260929_171254_bc11O1V6nm.png"
+    },
+    {
+      "title": "[공지] 2026년 10월. 행운의 알 [텔루스]",
+      "link": "https://community.withhive.com/dvc/ko/board/5/317627",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/10/13/20261013_141331_uAruNLEjIC.png"
     },
     {
       "title": "[안내] 이달의 알 일루이드 교배 외형 확률 정보",
@@ -28,13 +35,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/09/22/20260922_192858_V0xvHNjmcC.png"
-    },
-    {
-      "title": "[공지] 럭키 박스 및 셀오라 피규어 마일리지 지급 오류 안내",
-      "link": "https://community.withhive.com/dvc/ko/board/5/316773",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/09/15/20260915_183218_ArzLXpnoIu.png"
     }
   ]
 }
