@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T13:20:07.772Z",
+  "updatedAt": "2026-11-01T07:09:53.728Z",
   "items": [
     {
       "title": "[이벤트] 내 마음의 오라 이벤트 안내",
@@ -23,18 +23,18 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/10/27/20261027_110431_B0gXZpEXSw.png"
     },
     {
-      "title": "[공지] 2026년 10월. 행운의 알 [텔루스]",
-      "link": "https://community.withhive.com/dvc/ko/board/5/317627",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/10/13/20261013_141331_uAruNLEjIC.png"
-    },
-    {
       "title": "[안내] 이달의 알 유트리엘 교배 외형 확률 정보",
       "link": "https://community.withhive.com/dvc/ko/board/5/317917",
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/10/28/20261028_111516_sWsVLwkp6Y.png"
+    },
+    {
+      "title": "[공지] 2026년 10월. 행운의 알 [텔루스]",
+      "link": "https://community.withhive.com/dvc/ko/board/5/317627",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/10/13/20261013_141331_uAruNLEjIC.png"
     }
   ]
 }
