@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-11-02T20:01:00.307Z",
+  "updatedAt": "2026-11-03T07:35:57.769Z",
   "items": [
+    {
+      "title": "[공지] 신규 드래곤 탭 내 ‘닌자 드래곤’ 우주 앨범 완성 랭킹 표기 오류 및 정상화 조치 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/318068",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/11/03/20261103_162626_Adg8SD4M2U.png"
+    },
     {
       "title": "[공지] 2026년 11월. 이달의 알 [유트리엘]",
       "link": "https://community.withhive.com/dvc/ko/board/5/317933",
@@ -9,11 +16,11 @@
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/10/28/20261028_114330_i4nxZLz9b8.png"
     },
     {
-      "title": "[이벤트] 할로윈 축제 이벤트안내",
-      "link": "https://community.withhive.com/dvc/ko/board/20/317872",
+      "title": "[이벤트] 내 마음의 오라 이벤트 안내",
+      "link": "https://community.withhive.com/dvc/board/20/317308",
       "date": "",
       "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/10/27/20261027_110431_B0gXZpEXSw.png"
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/09/29/20260929_171254_bc11O1V6nm.png"
     },
     {
       "title": "[안내] 이달의 알 유트리엘 교배 외형 확률 정보",
@@ -28,13 +35,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/10/13/20261013_141331_uAruNLEjIC.png"
-    },
-    {
-      "title": "[안내] 이달의 알 일루이드 교배 외형 확률 정보",
-      "link": "https://community.withhive.com/dvc/ko/board/5/316833",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/09/16/20260916_094135_wtOZOny9Xd.png"
     }
   ]
 }
