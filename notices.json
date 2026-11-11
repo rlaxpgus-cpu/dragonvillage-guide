@@ -1,8 +1,15 @@
 {
-  "updatedAt": "2026-11-10T17:31:50.714Z",
+  "updatedAt": "2026-11-11T07:31:29.477Z",
   "items": [
     {
-      "title": "[이벤트] 2026년 시그니처 페스티벌 공지",
+      "title": "[공지] 이벤트 교환소 드래곤 성장 외형 오류 및 조치 안내",
+      "link": "https://community.withhive.com/dvc/ko/board/5/318225",
+      "date": "",
+      "category": "공지사항",
+      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/11/11/20261111_154213_J56mCdsLMQ.png"
+    },
+    {
+      "title": "[이벤트] 2026년 시그니처 페스티벌 공지 (11.11 내용 수정)",
       "link": "https://community.withhive.com/dvc/ko/board/20/318193",
       "date": "",
       "category": "공지사항",
@@ -28,13 +35,6 @@
       "date": "",
       "category": "공지사항",
       "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/11/03/20261103_162626_Adg8SD4M2U.png"
-    },
-    {
-      "title": "[안내] 이달의 알 유트리엘 교배 외형 확률 정보",
-      "link": "https://community.withhive.com/dvc/ko/board/5/317917",
-      "date": "",
-      "category": "공지사항",
-      "image": "https://hive-fn.qpyou.cn/webdev/hive_community/dvc/image/2026/10/28/20261028_111516_sWsVLwkp6Y.png"
     }
   ]
 }
